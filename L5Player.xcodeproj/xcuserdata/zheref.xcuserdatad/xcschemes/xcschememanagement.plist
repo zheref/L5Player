@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DemoPlayer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>L5Player.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>2B0455F41F1859EC005D8D82</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2B0456091F185A35005D8D82</key>
 		<dict>
 			<key>primary</key>
 			<true/>
