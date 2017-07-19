@@ -10,6 +10,18 @@
 		2B0455F61F1859EC005D8D82 /* L5Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0455EC1F1859EC005D8D82 /* L5Player.framework */; };
 		2B0455FB1F1859EC005D8D82 /* L5PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0455FA1F1859EC005D8D82 /* L5PlayerTests.swift */; };
 		2B0455FD1F1859EC005D8D82 /* L5Player.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B0455EF1F1859EC005D8D82 /* L5Player.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B04560D1F185A35005D8D82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B04560C1F185A35005D8D82 /* AppDelegate.swift */; };
+		2B04560F1F185A35005D8D82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B04560E1F185A35005D8D82 /* ViewController.swift */; };
+		2B0456121F185A35005D8D82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0456101F185A35005D8D82 /* Main.storyboard */; };
+		2B0456141F185A35005D8D82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0456131F185A35005D8D82 /* Assets.xcassets */; };
+		2B0456171F185A35005D8D82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0456151F185A35005D8D82 /* LaunchScreen.storyboard */; };
+		78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */; };
+		78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C71F1FBC33007EBA17 /* L5Asset.swift */; };
+		78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */; };
+		78B356CD1F1FCB76007EBA17 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */; };
+		78B356CF1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356CE1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift */; };
+		78B356D11F1FCC36007EBA17 /* L5AssetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356D01F1FCC36007EBA17 /* L5AssetStatus.swift */; };
+		78B356D51F1FED28007EBA17 /* L5PreloadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356D41F1FED28007EBA17 /* L5PreloadingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +41,20 @@
 		2B0455F51F1859EC005D8D82 /* L5PlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = L5PlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0455FA1F1859EC005D8D82 /* L5PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L5PlayerTests.swift; sourceTree = "<group>"; };
 		2B0455FC1F1859EC005D8D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B04560A1F185A35005D8D82 /* DemoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B04560C1F185A35005D8D82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B04560E1F185A35005D8D82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B0456111F185A35005D8D82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B0456131F185A35005D8D82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B0456161F185A35005D8D82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2B0456181F185A35005D8D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloaderProtocol.swift; path = Preloaders/L5PreloaderProtocol.swift; sourceTree = "<group>"; };
+		78B356C71F1FBC33007EBA17 /* L5Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5Asset.swift; sourceTree = "<group>"; };
+		78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreemptiveBufferPreloader.swift; path = Preloaders/L5PreemptiveBufferPreloader.swift; sourceTree = "<group>"; };
+		78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		78B356CE1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5PlayerBootstrap.swift; sourceTree = "<group>"; };
+		78B356D01F1FCC36007EBA17 /* L5AssetStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5AssetStatus.swift; sourceTree = "<group>"; };
+		78B356D41F1FED28007EBA17 /* L5PreloadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloadingManager.swift; path = PreloadingManagement/L5PreloadingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B356CD1F1FCB76007EBA17 /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +74,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2B0456071F185A35005D8D82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,7 +89,9 @@
 			children = (
 				2B0455EE1F1859EC005D8D82 /* L5Player */,
 				2B0455F91F1859EC005D8D82 /* L5PlayerTests */,
+				2B04560B1F185A35005D8D82 /* DemoPlayer */,
 				2B0455ED1F1859EC005D8D82 /* Products */,
+				78B356CB1F1FCB3B007EBA17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +100,7 @@
 			children = (
 				2B0455EC1F1859EC005D8D82 /* L5Player.framework */,
 				2B0455F51F1859EC005D8D82 /* L5PlayerTests.xctest */,
+				2B04560A1F185A35005D8D82 /* DemoPlayer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +108,10 @@
 		2B0455EE1F1859EC005D8D82 /* L5Player */ = {
 			isa = PBXGroup;
 			children = (
+				78B356CE1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift */,
+				78B356D31F1FE90B007EBA17 /* Model */,
+				78B356D21F1FE8FD007EBA17 /* Preloading Management */,
+				78B356C41F1FBA9A007EBA17 /* Preloaders */,
 				2B0455EF1F1859EC005D8D82 /* L5Player.h */,
 				2B0455F01F1859EC005D8D82 /* Info.plist */,
 			);
@@ -84,6 +125,53 @@
 				2B0455FC1F1859EC005D8D82 /* Info.plist */,
 			);
 			path = L5PlayerTests;
+			sourceTree = "<group>";
+		};
+		2B04560B1F185A35005D8D82 /* DemoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				2B04560C1F185A35005D8D82 /* AppDelegate.swift */,
+				2B04560E1F185A35005D8D82 /* ViewController.swift */,
+				2B0456101F185A35005D8D82 /* Main.storyboard */,
+				2B0456131F185A35005D8D82 /* Assets.xcassets */,
+				2B0456151F185A35005D8D82 /* LaunchScreen.storyboard */,
+				2B0456181F185A35005D8D82 /* Info.plist */,
+			);
+			path = DemoPlayer;
+			sourceTree = "<group>";
+		};
+		78B356C41F1FBA9A007EBA17 /* Preloaders */ = {
+			isa = PBXGroup;
+			children = (
+				78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */,
+				78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */,
+			);
+			name = Preloaders;
+			sourceTree = "<group>";
+		};
+		78B356CB1F1FCB3B007EBA17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78B356D21F1FE8FD007EBA17 /* Preloading Management */ = {
+			isa = PBXGroup;
+			children = (
+				78B356D41F1FED28007EBA17 /* L5PreloadingManager.swift */,
+			);
+			name = "Preloading Management";
+			sourceTree = "<group>";
+		};
+		78B356D31F1FE90B007EBA17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78B356C71F1FBC33007EBA17 /* L5Asset.swift */,
+				78B356D01F1FCC36007EBA17 /* L5AssetStatus.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +224,23 @@
 			productReference = 2B0455F51F1859EC005D8D82 /* L5PlayerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2B0456091F185A35005D8D82 /* DemoPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B0456191F185A35005D8D82 /* Build configuration list for PBXNativeTarget "DemoPlayer" */;
+			buildPhases = (
+				2B0456061F185A35005D8D82 /* Sources */,
+				2B0456071F185A35005D8D82 /* Frameworks */,
+				2B0456081F185A35005D8D82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemoPlayer;
+			productName = DemoPlayer;
+			productReference = 2B04560A1F185A35005D8D82 /* DemoPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,9 +254,15 @@
 					2B0455EB1F1859EC005D8D82 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = B64365EYZ4;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					2B0455F41F1859EC005D8D82 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B64365EYZ4;
+						ProvisioningStyle = Automatic;
+					};
+					2B0456091F185A35005D8D82 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = B64365EYZ4;
 						ProvisioningStyle = Automatic;
@@ -164,6 +275,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2B0455E21F1859EC005D8D82;
 			productRefGroup = 2B0455ED1F1859EC005D8D82 /* Products */;
@@ -172,6 +284,7 @@
 			targets = (
 				2B0455EB1F1859EC005D8D82 /* L5Player */,
 				2B0455F41F1859EC005D8D82 /* L5PlayerTests */,
+				2B0456091F185A35005D8D82 /* DemoPlayer */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +304,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2B0456081F185A35005D8D82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B0456171F185A35005D8D82 /* LaunchScreen.storyboard in Resources */,
+				2B0456141F185A35005D8D82 /* Assets.xcassets in Resources */,
+				2B0456121F185A35005D8D82 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -198,6 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */,
+				78B356D11F1FCC36007EBA17 /* L5AssetStatus.swift in Sources */,
+				78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */,
+				78B356CF1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift in Sources */,
+				78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */,
+				78B356D51F1FED28007EBA17 /* L5PreloadingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +335,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B0455FB1F1859EC005D8D82 /* L5PlayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B0456061F185A35005D8D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B04560F1F185A35005D8D82 /* ViewController.swift in Sources */,
+				2B04560D1F185A35005D8D82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +356,25 @@
 			targetProxy = 2B0455F71F1859EC005D8D82 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2B0456101F185A35005D8D82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B0456111F185A35005D8D82 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2B0456151F185A35005D8D82 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B0456161F185A35005D8D82 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2B0455FE1F1859EC005D8D82 /* Debug */ = {
@@ -324,18 +481,24 @@
 		2B0456011F1859EC005D8D82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B64365EYZ4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = L5Player/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.li5.L5Player;
+				PRODUCT_BUNDLE_IDENTIFIER = com.li5.li5player;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,16 +506,21 @@
 		2B0456021F1859EC005D8D82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B64365EYZ4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = L5Player/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.li5.L5Player;
+				PRODUCT_BUNDLE_IDENTIFIER = com.li5.li5player;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -362,6 +530,7 @@
 		2B0456041F1859EC005D8D82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = B64365EYZ4;
 				INFOPLIST_FILE = L5PlayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,10 +543,37 @@
 		2B0456051F1859EC005D8D82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = B64365EYZ4;
 				INFOPLIST_FILE = L5PlayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.li5.L5PlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2B04561A1F185A35005D8D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B64365EYZ4;
+				INFOPLIST_FILE = DemoPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.li5.li5player.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2B04561B1F185A35005D8D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B64365EYZ4;
+				INFOPLIST_FILE = DemoPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.li5.li5player.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -402,6 +598,7 @@
 				2B0456021F1859EC005D8D82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B0456031F1859EC005D8D82 /* Build configuration list for PBXNativeTarget "L5PlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +607,16 @@
 				2B0456051F1859EC005D8D82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B0456191F185A35005D8D82 /* Build configuration list for PBXNativeTarget "DemoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B04561A1F185A35005D8D82 /* Debug */,
+				2B04561B1F185A35005D8D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

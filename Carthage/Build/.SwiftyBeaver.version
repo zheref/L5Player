@@ -1,0 +1,27 @@
+{
+  "iOS" : [
+    {
+      "hash" : "1129931c4465b99706473939e04f0b78c9e480208950ea744fa6e9def2ab5951",
+      "name" : "SwiftyBeaver"
+    }
+  ],
+  "commitish" : "1.3.2",
+  "watchOS" : [
+    {
+      "hash" : "3cc14ee3a97cd66f83fd9c8e9cf13fafd7d1623ade14a55f194818b6acb85ac9",
+      "name" : "SwiftyBeaver"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "dcfd16acceb5eaa8823f47673f67136f28bf1a9fe7e9f1ac4743286eaea3f7ea",
+      "name" : "SwiftyBeaver"
+    }
+  ],
+  "Mac" : [
+    {
+      "hash" : "2edbb76676aa8950062480a2991a6f58269f7b13fbbe6792ac6c64c3392d9ada",
+      "name" : "SwiftyBeaver"
+    }
+  ]
+}
