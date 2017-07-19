@@ -36,6 +36,8 @@ class L5PreemptiveBufferPreloader : L5PreemptiveBufferPreloaderProtocol {
     // MARK: - EXPOSED OPERATIONS
     
     func preload(asset: L5Asset, completion: @escaping PreloadCompletion) {
+        asset.bufferStatus = .buffering
+        
         asset.media?.loadValuesAsynchronously(forKeys: L5PreemptiveBufferPreloader.propertiesToPreload) {
             [weak self] in
             
