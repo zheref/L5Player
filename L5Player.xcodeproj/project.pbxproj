@@ -15,13 +15,14 @@
 		2B0456121F185A35005D8D82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0456101F185A35005D8D82 /* Main.storyboard */; };
 		2B0456141F185A35005D8D82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0456131F185A35005D8D82 /* Assets.xcassets */; };
 		2B0456171F185A35005D8D82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0456151F185A35005D8D82 /* LaunchScreen.storyboard */; };
+		2B6DBA4D1F204588004A68AA /* L5PreloadingManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA4C1F204588004A68AA /* L5PreloadingManagerProtocol.swift */; };
 		78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */; };
 		78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C71F1FBC33007EBA17 /* L5Asset.swift */; };
 		78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */; };
 		78B356CD1F1FCB76007EBA17 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */; };
 		78B356CF1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356CE1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift */; };
 		78B356D11F1FCC36007EBA17 /* L5AssetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356D01F1FCC36007EBA17 /* L5AssetStatus.swift */; };
-		78B356D51F1FED28007EBA17 /* L5PreloadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356D41F1FED28007EBA17 /* L5PreloadingManager.swift */; };
+		78B356D51F1FED28007EBA17 /* L5CommonPreloadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356D41F1FED28007EBA17 /* L5CommonPreloadingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,13 +49,14 @@
 		2B0456131F185A35005D8D82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B0456161F185A35005D8D82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B0456181F185A35005D8D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B6DBA4C1F204588004A68AA /* L5PreloadingManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloadingManagerProtocol.swift; path = PreloadingManagement/L5PreloadingManagerProtocol.swift; sourceTree = "<group>"; };
 		78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloaderProtocol.swift; path = Preloaders/L5PreloaderProtocol.swift; sourceTree = "<group>"; };
 		78B356C71F1FBC33007EBA17 /* L5Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5Asset.swift; sourceTree = "<group>"; };
 		78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreemptiveBufferPreloader.swift; path = Preloaders/L5PreemptiveBufferPreloader.swift; sourceTree = "<group>"; };
 		78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		78B356CE1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5PlayerBootstrap.swift; sourceTree = "<group>"; };
 		78B356D01F1FCC36007EBA17 /* L5AssetStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5AssetStatus.swift; sourceTree = "<group>"; };
-		78B356D41F1FED28007EBA17 /* L5PreloadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloadingManager.swift; path = PreloadingManagement/L5PreloadingManager.swift; sourceTree = "<group>"; };
+		78B356D41F1FED28007EBA17 /* L5CommonPreloadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5CommonPreloadingManager.swift; path = PreloadingManagement/L5CommonPreloadingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +162,8 @@
 		78B356D21F1FE8FD007EBA17 /* Preloading Management */ = {
 			isa = PBXGroup;
 			children = (
-				78B356D41F1FED28007EBA17 /* L5PreloadingManager.swift */,
+				2B6DBA4C1F204588004A68AA /* L5PreloadingManagerProtocol.swift */,
+				78B356D41F1FED28007EBA17 /* L5CommonPreloadingManager.swift */,
 			);
 			name = "Preloading Management";
 			sourceTree = "<group>";
@@ -321,12 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6DBA4D1F204588004A68AA /* L5PreloadingManagerProtocol.swift in Sources */,
 				78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */,
 				78B356D11F1FCC36007EBA17 /* L5AssetStatus.swift in Sources */,
 				78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */,
 				78B356CF1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift in Sources */,
 				78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */,
-				78B356D51F1FED28007EBA17 /* L5PreloadingManager.swift in Sources */,
+				78B356D51F1FED28007EBA17 /* L5CommonPreloadingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

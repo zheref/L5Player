@@ -10,30 +10,14 @@ import Foundation
 import AVFoundation
 
 
-protocol L5PreloadingManagerProtocol {
+protocol L5CommonPreloadingManagerProtocol : L5PreloadingManagerProtocol {
     
     
     
 }
 
 
-protocol L5PreloadingManagerDelegate {
-    
-    var playingIndex: Int { get }
-    
-    func requiredAssetIsBuffering(_ asset: L5Asset)
-    
-    func requiredAssetIsReady(_ asset: L5Asset)
-    
-    func requiredAssetIsDownloaded(_ asset: L5Asset)
-    
-    func managerDidFinishBufferingMinimumRequiredAssets()
-    
-    func managerDidFinishDownloadingRequiredAssets()
-}
-
-
-class L5PreloadingManager {
+class L5CommonPreloadingManager {
     
     // MARK: - CLASS PROPERTIES
     
@@ -94,7 +78,7 @@ class L5PreloadingManager {
     
     /// Starts preloading videos by buffering and/or caching according to the configuration
     func startPreloading() {
-        for i in 0...L5PreloadingManager.surroundBy {
+        for i in 0...L5CommonPreloadingManager.surroundBy {
             preload(index: i)
         }
     }
@@ -115,7 +99,7 @@ class L5PreloadingManager {
     /// Preload the video corresponding to the given index by buffering and/or downloading
     /// according to the setup configuration.
     /// - Parameter index: The index to be preloaded
-    fileprivate func preload(index: Int) {
+    func preload(index: Int) {
         let asset = assets[index]
         
         log.debug("Starting preloading: \(index) -> \(asset.url.absoluteURL)")
@@ -136,7 +120,7 @@ class L5PreloadingManager {
             
             let alreadyBufferedAssets = this.assets.filter { $0.bufferStatus == .buffered }
             
-            if isEnough(bufferedAssetsAmount: alreadyBufferedAssets.count) {
+            if this.isEnough(bufferedAssetsAmount: alreadyBufferedAssets.count) {
                 
                 self?.delegate?.managerDidFinishBufferingMinimumRequiredAssets()
             }
@@ -150,14 +134,14 @@ class L5PreloadingManager {
     /// - Parameter bufferedAssetsAmount: The amount of already buffered assets
     /// - Returns: Whether it is enough to satisfy requirements or not
     private func isEnough(bufferedAssetsAmount: Int) -> Bool {
-        return bufferedAssetsAmount > L5PreloadingManager.minimumRequiredPreloadedAssets &&
-            bufferedAssetsAmount < L5PreloadingManager.minimumRequiredPreloadedAssets + 2
+        return bufferedAssetsAmount > L5CommonPreloadingManager.minimumRequiredPreloadedAssets &&
+            bufferedAssetsAmount < L5CommonPreloadingManager.minimumRequiredPreloadedAssets + 2
     }
     
 }
 
 
-extension L5PreloadingManager : L5PreloaderDelegate {
+extension L5CommonPreloadingManager : L5PreloaderDelegate {
     
     func didPreload(asset: L5Asset, by amount: Double) {
         
