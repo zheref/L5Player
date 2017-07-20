@@ -17,7 +17,7 @@ protocol L5CommonPreloadingManagerProtocol : L5PreloadingManagerProtocol {
 }
 
 
-class L5CommonPreloadingManager {
+public class L5CommonPreloadingManager {
     
     // MARK: - CLASS PROPERTIES
     
@@ -31,7 +31,7 @@ class L5CommonPreloadingManager {
     private var assets = [L5Asset]()
     
     /// The responsible of handling the progress and completion of buffering and caching of assets
-    private var delegate: L5PreloadingManagerDelegate?
+    public var delegate: L5PreloadingManagerDelegate?
     
     /// The instance responsible of buffering the video to play it
     private var bufferer: L5BufferPreloaderProtocol?
@@ -52,12 +52,10 @@ class L5CommonPreloadingManager {
     ///   - bufferer: The responsible to provide a mechanism to preemptively load videos by buffering
     ///   - downloader: The reponsible to provide a mechanism to cache videos by downloading
     init(assets: [L5Asset],
-         delegate: L5PreloadingManagerDelegate,
          bufferer: L5BufferPreloaderProtocol? =  nil,
          downloader: L5DownloadPreloaderProtocol? = nil) {
         
         self.assets = assets
-        self.delegate = delegate
         
         setup(bufferer: bufferer, downloader: downloader)
     }
@@ -143,15 +141,15 @@ class L5CommonPreloadingManager {
 
 extension L5CommonPreloadingManager : L5PreloaderDelegate {
     
-    func didPreload(asset: L5Asset, by amount: Double) {
+    public func didPreload(asset: L5Asset, by amount: Double) {
         
     }
     
-    func didFinishPreloading(asset: L5Asset) {
+    public func didFinishPreloading(asset: L5Asset) {
         
     }
     
-    func didFailPreloading(asset: L5Asset, withError error: Error) {
+    public func didFailPreloading(asset: L5Asset, withError error: Error) {
         
     }
     

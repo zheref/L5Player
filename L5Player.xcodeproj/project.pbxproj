@@ -19,6 +19,24 @@
 		2B6DBA4F1F20E850004A68AA /* L5HLSionDownloadPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA4E1F20E850004A68AA /* L5HLSionDownloadPreloader.swift */; };
 		2B6DBA511F20E983004A68AA /* HLSion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6DBA501F20E983004A68AA /* HLSion.framework */; };
 		2B6DBA541F20ED60004A68AA /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA531F20ED60004A68AA /* MockData.swift */; };
+		2B6DBA561F20F190004A68AA /* StackScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6DBA551F20F190004A68AA /* StackScrollView.framework */; };
+		2B6DBA591F20F37A004A68AA /* PickerStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA581F20F37A004A68AA /* PickerStackCell.swift */; };
+		2B6DBA5B1F20F3B2004A68AA /* TextFieldStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA5A1F20F3B2004A68AA /* TextFieldStackCell.swift */; };
+		2B6DBA5D1F20F470004A68AA /* SwitchStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA5C1F20F470004A68AA /* SwitchStackCell.swift */; };
+		2B6DBA5F1F211AC9004A68AA /* SeparatorStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA5E1F211AC9004A68AA /* SeparatorStackCell.swift */; };
+		2B6DBA611F211D2A004A68AA /* HeaderStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA601F211D2A004A68AA /* HeaderStackCell.swift */; };
+		2B6DBA631F211DE6004A68AA /* ButtonStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA621F211DE6004A68AA /* ButtonStackCell.swift */; };
+		2B6DBA651F21223A004A68AA /* EasyPeasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6DBA641F21223A004A68AA /* EasyPeasy.framework */; };
+		2B6DBA661F2123F1004A68AA /* StackScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6DBA551F20F190004A68AA /* StackScrollView.framework */; };
+		2B6DBA681F212466004A68AA /* TapStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA671F212466004A68AA /* TapStackCell.swift */; };
+		2B6DBA6A1F212591004A68AA /* StackCellBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA691F212591004A68AA /* StackCellBase.swift */; };
+		2B6DBA6C1F2125F2004A68AA /* MarginStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA6B1F2125F2004A68AA /* MarginStackCell.swift */; };
+		2BBF22EC1F21444A00A278C3 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22EB1F21444A00A278C3 /* ShowViewController.swift */; };
+		2BBF22ED1F2144D000A278C3 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */; };
+		2BBF22F01F21454500A278C3 /* L5PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22EF1F21454500A278C3 /* L5PlayerView.swift */; };
+		2BBF22F11F21459E00A278C3 /* L5Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0455EC1F1859EC005D8D82 /* L5Player.framework */; };
+		2BBF22F41F2148FE00A278C3 /* L5PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22F31F2148FE00A278C3 /* L5PlayerProtocol.swift */; };
+		2BBF22F61F214A2600A278C3 /* L5QueuePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22F51F214A2600A278C3 /* L5QueuePlayer.swift */; };
 		78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */; };
 		78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C71F1FBC33007EBA17 /* L5Asset.swift */; };
 		78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */; };
@@ -56,6 +74,21 @@
 		2B6DBA4E1F20E850004A68AA /* L5HLSionDownloadPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5HLSionDownloadPreloader.swift; path = Preloaders/L5HLSionDownloadPreloader.swift; sourceTree = "<group>"; };
 		2B6DBA501F20E983004A68AA /* HLSion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HLSion.framework; path = Carthage/Build/iOS/HLSion.framework; sourceTree = "<group>"; };
 		2B6DBA531F20ED60004A68AA /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockData.swift; path = Mock/MockData.swift; sourceTree = "<group>"; };
+		2B6DBA551F20F190004A68AA /* StackScrollView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StackScrollView.framework; sourceTree = "<group>"; };
+		2B6DBA581F20F37A004A68AA /* PickerStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerStackCell.swift; path = StackCells/PickerStackCell.swift; sourceTree = "<group>"; };
+		2B6DBA5A1F20F3B2004A68AA /* TextFieldStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldStackCell.swift; path = StackCells/TextFieldStackCell.swift; sourceTree = "<group>"; };
+		2B6DBA5C1F20F470004A68AA /* SwitchStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchStackCell.swift; path = StackCells/SwitchStackCell.swift; sourceTree = "<group>"; };
+		2B6DBA5E1F211AC9004A68AA /* SeparatorStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorStackCell.swift; path = StackCells/SeparatorStackCell.swift; sourceTree = "<group>"; };
+		2B6DBA601F211D2A004A68AA /* HeaderStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderStackCell.swift; path = StackCells/HeaderStackCell.swift; sourceTree = "<group>"; };
+		2B6DBA621F211DE6004A68AA /* ButtonStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonStackCell.swift; path = StackCells/ButtonStackCell.swift; sourceTree = "<group>"; };
+		2B6DBA641F21223A004A68AA /* EasyPeasy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyPeasy.framework; path = Carthage/Build/iOS/EasyPeasy.framework; sourceTree = "<group>"; };
+		2B6DBA671F212466004A68AA /* TapStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TapStackCell.swift; path = StackCells/TapStackCell.swift; sourceTree = "<group>"; };
+		2B6DBA691F212591004A68AA /* StackCellBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackCellBase.swift; path = StackCells/StackCellBase.swift; sourceTree = "<group>"; };
+		2B6DBA6B1F2125F2004A68AA /* MarginStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarginStackCell.swift; path = StackCells/MarginStackCell.swift; sourceTree = "<group>"; };
+		2BBF22EB1F21444A00A278C3 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		2BBF22EF1F21454500A278C3 /* L5PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PlayerView.swift; path = Views/L5PlayerView.swift; sourceTree = "<group>"; };
+		2BBF22F31F2148FE00A278C3 /* L5PlayerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PlayerProtocol.swift; path = Player/L5PlayerProtocol.swift; sourceTree = "<group>"; };
+		2BBF22F51F214A2600A278C3 /* L5QueuePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5QueuePlayer.swift; path = Player/L5QueuePlayer.swift; sourceTree = "<group>"; };
 		78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloaderProtocol.swift; path = Preloaders/L5PreloaderProtocol.swift; sourceTree = "<group>"; };
 		78B356C71F1FBC33007EBA17 /* L5Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5Asset.swift; sourceTree = "<group>"; };
 		78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreemptiveBufferPreloader.swift; path = Preloaders/L5PreemptiveBufferPreloader.swift; sourceTree = "<group>"; };
@@ -72,6 +105,7 @@
 			files = (
 				78B356CD1F1FCB76007EBA17 /* SwiftyBeaver.framework in Frameworks */,
 				2B6DBA511F20E983004A68AA /* HLSion.framework in Frameworks */,
+				2B6DBA561F20F190004A68AA /* StackScrollView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +121,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBF22F11F21459E00A278C3 /* L5Player.framework in Frameworks */,
+				2B6DBA651F21223A004A68AA /* EasyPeasy.framework in Frameworks */,
+				2BBF22ED1F2144D000A278C3 /* SwiftyBeaver.framework in Frameworks */,
+				2B6DBA661F2123F1004A68AA /* StackScrollView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +155,8 @@
 		2B0455EE1F1859EC005D8D82 /* L5Player */ = {
 			isa = PBXGroup;
 			children = (
+				2BBF22F21F2148D300A278C3 /* Player */,
+				2BBF22EE1F21453500A278C3 /* Views */,
 				2B6DBA521F20ED3A004A68AA /* Mock */,
 				78B356CE1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift */,
 				78B356D31F1FE90B007EBA17 /* Model */,
@@ -140,8 +180,10 @@
 		2B04560B1F185A35005D8D82 /* DemoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				2B6DBA571F20F34F004A68AA /* StackCells */,
 				2B04560C1F185A35005D8D82 /* AppDelegate.swift */,
 				2B04560E1F185A35005D8D82 /* ViewController.swift */,
+				2BBF22EB1F21444A00A278C3 /* ShowViewController.swift */,
 				2B0456101F185A35005D8D82 /* Main.storyboard */,
 				2B0456131F185A35005D8D82 /* Assets.xcassets */,
 				2B0456151F185A35005D8D82 /* LaunchScreen.storyboard */,
@@ -158,6 +200,39 @@
 			name = Mock;
 			sourceTree = "<group>";
 		};
+		2B6DBA571F20F34F004A68AA /* StackCells */ = {
+			isa = PBXGroup;
+			children = (
+				2B6DBA581F20F37A004A68AA /* PickerStackCell.swift */,
+				2B6DBA5A1F20F3B2004A68AA /* TextFieldStackCell.swift */,
+				2B6DBA5C1F20F470004A68AA /* SwitchStackCell.swift */,
+				2B6DBA5E1F211AC9004A68AA /* SeparatorStackCell.swift */,
+				2B6DBA601F211D2A004A68AA /* HeaderStackCell.swift */,
+				2B6DBA621F211DE6004A68AA /* ButtonStackCell.swift */,
+				2B6DBA671F212466004A68AA /* TapStackCell.swift */,
+				2B6DBA691F212591004A68AA /* StackCellBase.swift */,
+				2B6DBA6B1F2125F2004A68AA /* MarginStackCell.swift */,
+			);
+			name = StackCells;
+			sourceTree = "<group>";
+		};
+		2BBF22EE1F21453500A278C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2BBF22EF1F21454500A278C3 /* L5PlayerView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2BBF22F21F2148D300A278C3 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				2BBF22F31F2148FE00A278C3 /* L5PlayerProtocol.swift */,
+				2BBF22F51F214A2600A278C3 /* L5QueuePlayer.swift */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
 		78B356C41F1FBA9A007EBA17 /* Preloaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +246,8 @@
 		78B356CB1F1FCB3B007EBA17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B6DBA641F21223A004A68AA /* EasyPeasy.framework */,
+				2B6DBA551F20F190004A68AA /* StackScrollView.framework */,
 				2B6DBA501F20E983004A68AA /* HLSion.framework */,
 				78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */,
 			);
@@ -343,11 +420,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B6DBA4D1F204588004A68AA /* L5PreloadingManagerProtocol.swift in Sources */,
+				2BBF22F61F214A2600A278C3 /* L5QueuePlayer.swift in Sources */,
 				78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */,
+				2BBF22F01F21454500A278C3 /* L5PlayerView.swift in Sources */,
 				78B356D11F1FCC36007EBA17 /* L5AssetStatus.swift in Sources */,
 				78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */,
 				2B6DBA541F20ED60004A68AA /* MockData.swift in Sources */,
 				78B356CF1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift in Sources */,
+				2BBF22F41F2148FE00A278C3 /* L5PlayerProtocol.swift in Sources */,
 				78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */,
 				2B6DBA4F1F20E850004A68AA /* L5HLSionDownloadPreloader.swift in Sources */,
 				78B356D51F1FED28007EBA17 /* L5CommonPreloadingManager.swift in Sources */,
@@ -366,8 +446,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6DBA591F20F37A004A68AA /* PickerStackCell.swift in Sources */,
 				2B04560F1F185A35005D8D82 /* ViewController.swift in Sources */,
+				2B6DBA631F211DE6004A68AA /* ButtonStackCell.swift in Sources */,
+				2B6DBA6A1F212591004A68AA /* StackCellBase.swift in Sources */,
+				2B6DBA5F1F211AC9004A68AA /* SeparatorStackCell.swift in Sources */,
+				2B6DBA6C1F2125F2004A68AA /* MarginStackCell.swift in Sources */,
+				2B6DBA5D1F20F470004A68AA /* SwitchStackCell.swift in Sources */,
+				2B6DBA5B1F20F3B2004A68AA /* TextFieldStackCell.swift in Sources */,
 				2B04560D1F185A35005D8D82 /* AppDelegate.swift in Sources */,
+				2B6DBA681F212466004A68AA /* TapStackCell.swift in Sources */,
+				2B6DBA611F211D2A004A68AA /* HeaderStackCell.swift in Sources */,
+				2BBF22EC1F21444A00A278C3 /* ShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +605,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = L5Player/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -540,6 +631,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = L5Player/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -582,6 +674,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B64365EYZ4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DemoPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.li5.li5player.demo;
@@ -595,6 +692,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B64365EYZ4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DemoPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.li5.li5player.demo;

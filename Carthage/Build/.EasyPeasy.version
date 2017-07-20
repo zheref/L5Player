@@ -1,0 +1,21 @@
+{
+  "iOS" : [
+    {
+      "hash" : "62969b0108ad2c9d1e1475169b657c31e03d458529e5d113f7cfef2ef74c9337",
+      "name" : "EasyPeasy"
+    }
+  ],
+  "commitish" : "1.4.2",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+    {
+      "hash" : "911d58dcd2a91ff07d37d4b32f79a7843de1bf9ee2cef700d40b7bd20073b3b5",
+      "name" : "EasyPeasy"
+    }
+  ]
+}

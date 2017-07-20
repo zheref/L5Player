@@ -9,10 +9,13 @@
 import Foundation
 
 
-protocol L5PreloadingManagerProtocol {
+public protocol L5PreloadingManagerProtocol {
     
-    init(assets: [L5Asset], delegate: L5PreloadingManagerDelegate,
-         bufferer: L5BufferPreloaderProtocol?, downloader: L5DownloadPreloaderProtocol?)
+    init(assets: [L5Asset],
+         bufferer: L5BufferPreloaderProtocol?,
+         downloader: L5DownloadPreloaderProtocol?)
+    
+    var delegate: L5PreloadingManagerDelegate? { get set }
     
     func setup(bufferer: L5BufferPreloaderProtocol?, downloader: L5DownloadPreloaderProtocol?)
     
@@ -23,7 +26,7 @@ protocol L5PreloadingManagerProtocol {
 }
 
 
-protocol L5PreloadingManagerDelegate {
+public protocol L5PreloadingManagerDelegate {
     
     var playingIndex: Int { get }
     

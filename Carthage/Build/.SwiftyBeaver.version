@@ -1,26 +1,26 @@
 {
   "iOS" : [
     {
-      "hash" : "f938aae8f0028e8999515907228442eaaaec34a861c5e4ad095430dc9f7fe0d7",
+      "hash" : "3f6a0049199b2ceb4e95b99f7843b67e4a4957eca56856452c27fa64be84faab",
       "name" : "SwiftyBeaver"
     }
   ],
   "commitish" : "1.3.2",
   "watchOS" : [
     {
-      "hash" : "30d6f3caf831cb0bc2262445cc147f012d1b250348e129be9124b8ecd709cc66",
+      "hash" : "e3d38ed72e9309110bb621af74bd08f02e9328abf7a6a0bd3cf8badac5035ed1",
       "name" : "SwiftyBeaver"
     }
   ],
   "tvOS" : [
     {
-      "hash" : "772bbc154cd67335c40faae8daf8cc749450bd06465c8a90c080b9a2660c8f81",
+      "hash" : "dc64c4986f6bdd00eb8baa3471e002ef4a6d4da7d92a486d7d420d903a2419a5",
       "name" : "SwiftyBeaver"
     }
   ],
   "Mac" : [
     {
-      "hash" : "f42cb7299afc8693790bccedcde8dfc15fbe50c8697afa2d7dc7f0fbe21e9dbe",
+      "hash" : "e65f14fdd5556cb1b66d949d4433ed55d71bf8fde27b8ad89d4059797c0d6946",
       "name" : "SwiftyBeaver"
     }
   ]

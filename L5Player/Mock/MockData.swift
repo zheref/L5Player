@@ -23,4 +23,22 @@ class MockData {
         "https://cdn-test.li5.tv/products/2017/06/26/c549384b-eb34-4b64-b7ca-a3554acc87cc/hls.m3u8"
     ]
     
+    static let hardcodedHls = [
+        "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+        "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8"
+    ]
+    
 }

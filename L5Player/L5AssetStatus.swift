@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum L5AssetBufferStatus {
+public enum L5AssetBufferStatus {
     
     case notStarted
     case buffering
@@ -17,7 +17,7 @@ enum L5AssetBufferStatus {
     
 }
 
-enum L5AssetDownloadStatus {
+public enum L5AssetDownloadStatus {
     
     case notStarted
     case downloading

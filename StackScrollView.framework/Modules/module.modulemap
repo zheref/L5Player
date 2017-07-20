@@ -1,0 +1,10 @@
+framework module StackScrollView {
+  umbrella header "StackScrollView.h"
+
+  export *
+  module * { export * }
+}
+
+module StackScrollView.Swift {
+    header "StackScrollView-Swift.h"
+}
