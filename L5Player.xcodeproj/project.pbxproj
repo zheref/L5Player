@@ -16,6 +16,9 @@
 		2B0456141F185A35005D8D82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0456131F185A35005D8D82 /* Assets.xcassets */; };
 		2B0456171F185A35005D8D82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0456151F185A35005D8D82 /* LaunchScreen.storyboard */; };
 		2B6DBA4D1F204588004A68AA /* L5PreloadingManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA4C1F204588004A68AA /* L5PreloadingManagerProtocol.swift */; };
+		2B6DBA4F1F20E850004A68AA /* L5HLSionDownloadPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA4E1F20E850004A68AA /* L5HLSionDownloadPreloader.swift */; };
+		2B6DBA511F20E983004A68AA /* HLSion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6DBA501F20E983004A68AA /* HLSion.framework */; };
+		2B6DBA541F20ED60004A68AA /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA531F20ED60004A68AA /* MockData.swift */; };
 		78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */; };
 		78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C71F1FBC33007EBA17 /* L5Asset.swift */; };
 		78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */; };
@@ -50,6 +53,9 @@
 		2B0456161F185A35005D8D82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B0456181F185A35005D8D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B6DBA4C1F204588004A68AA /* L5PreloadingManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloadingManagerProtocol.swift; path = PreloadingManagement/L5PreloadingManagerProtocol.swift; sourceTree = "<group>"; };
+		2B6DBA4E1F20E850004A68AA /* L5HLSionDownloadPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5HLSionDownloadPreloader.swift; path = Preloaders/L5HLSionDownloadPreloader.swift; sourceTree = "<group>"; };
+		2B6DBA501F20E983004A68AA /* HLSion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HLSion.framework; path = Carthage/Build/iOS/HLSion.framework; sourceTree = "<group>"; };
+		2B6DBA531F20ED60004A68AA /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockData.swift; path = Mock/MockData.swift; sourceTree = "<group>"; };
 		78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloaderProtocol.swift; path = Preloaders/L5PreloaderProtocol.swift; sourceTree = "<group>"; };
 		78B356C71F1FBC33007EBA17 /* L5Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5Asset.swift; sourceTree = "<group>"; };
 		78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreemptiveBufferPreloader.swift; path = Preloaders/L5PreemptiveBufferPreloader.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B356CD1F1FCB76007EBA17 /* SwiftyBeaver.framework in Frameworks */,
+				2B6DBA511F20E983004A68AA /* HLSion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +117,7 @@
 		2B0455EE1F1859EC005D8D82 /* L5Player */ = {
 			isa = PBXGroup;
 			children = (
+				2B6DBA521F20ED3A004A68AA /* Mock */,
 				78B356CE1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift */,
 				78B356D31F1FE90B007EBA17 /* Model */,
 				78B356D21F1FE8FD007EBA17 /* Preloading Management */,
@@ -142,11 +150,20 @@
 			path = DemoPlayer;
 			sourceTree = "<group>";
 		};
+		2B6DBA521F20ED3A004A68AA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				2B6DBA531F20ED60004A68AA /* MockData.swift */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
 		78B356C41F1FBA9A007EBA17 /* Preloaders */ = {
 			isa = PBXGroup;
 			children = (
 				78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */,
 				78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */,
+				2B6DBA4E1F20E850004A68AA /* L5HLSionDownloadPreloader.swift */,
 			);
 			name = Preloaders;
 			sourceTree = "<group>";
@@ -154,6 +171,7 @@
 		78B356CB1F1FCB3B007EBA17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B6DBA501F20E983004A68AA /* HLSion.framework */,
 				78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */,
 			);
 			name = Frameworks;
@@ -328,8 +346,10 @@
 				78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */,
 				78B356D11F1FCC36007EBA17 /* L5AssetStatus.swift in Sources */,
 				78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */,
+				2B6DBA541F20ED60004A68AA /* MockData.swift in Sources */,
 				78B356CF1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift in Sources */,
 				78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */,
+				2B6DBA4F1F20E850004A68AA /* L5HLSionDownloadPreloader.swift in Sources */,
 				78B356D51F1FED28007EBA17 /* L5CommonPreloadingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

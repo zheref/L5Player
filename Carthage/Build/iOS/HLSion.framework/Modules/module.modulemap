@@ -1,0 +1,10 @@
+framework module HLSion {
+  umbrella header "HLSion.h"
+
+  export *
+  module * { export * }
+}
+
+module HLSion.Swift {
+    header "HLSion-Swift.h"
+}

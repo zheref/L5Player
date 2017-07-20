@@ -8,11 +8,11 @@
 
 import Foundation
 
-
 typealias PreloadProgressClosure = (L5Asset, Double) -> Void
 typealias PreloadCompletion = (L5Asset, Error?) -> Void
 
-
+/// Determines a contract of how to preload certain asset and trigger the corresponding events
+/// on progress, error or completion
 protocol L5PreloaderProtocol {
     
     var delegate: L5PreloaderDelegate { get set }
@@ -21,18 +21,20 @@ protocol L5PreloaderProtocol {
     
 }
 
-
+/// Specialization of L5PreloaderProtocol focused on buffering purposes meaning preemptive loading
+/// that doesn't persist.
 protocol L5BufferPreloaderProtocol : L5PreloaderProtocol {
     
 }
 
-
+/// Specialization of L5PreloaderProtocol focused on downloading purposes meaning caching
+/// that persis on storage even after the app has been killed.
 protocol L5DownloadPreloaderProtocol : L5PreloaderProtocol {
     
 }
 
-
-protocol L5PreloaderDelegate {
+/// Delegate contract of class instance that should respond to the completion events
+protocol L5PreloaderDelegate : class {
     
     func didPreload(asset: L5Asset, by amount: Double)
     

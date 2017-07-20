@@ -1,0 +1,18 @@
+{
+  "iOS" : [
+    {
+      "hash" : "415559b67dd28a37f50379eece960a52224c06b7c055acc97bab45438fb53a0e",
+      "name" : "HLSion"
+    }
+  ],
+  "commitish" : "5aa2cd3813213f651a9dbf84bf933fee675c80ba",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+
+  ]
+}
