@@ -14,7 +14,7 @@ import StackScrollView
 
 final class PickerStackCell: TapStackCell {
     
-    let pickerView = UIDatePicker()
+    let pickerView = UIPickerView()
     let titleLabel = UILabel()
     let valueLabel = UILabel()
     var editing: Bool = false
