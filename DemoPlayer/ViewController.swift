@@ -39,7 +39,19 @@ class ViewController: UIViewController {
             let v = TextFieldStackCell()
             v.set(placeholder: "Videos amount")
             return v
-            }())
+        }())
+        
+        views.append(fullSeparator())
+        
+        views.append(HeaderStackCell(title: "Minimum videos to buffer before start playing", backgroundColor: marginColor))
+        
+        views.append(fullSeparator())
+        
+        views.append({
+            let v = TextFieldStackCell()
+            v.set(placeholder: "Videos amount")
+            return v
+        }())
         
         views.append(fullSeparator())
         
@@ -79,25 +91,11 @@ class ViewController: UIViewController {
         
         views.append({
             let v = ButtonStackCell(buttonTitle: "Start")
-            v.tapped = {
-                // Tap event
+            v.tapped = { [unowned self] in
+                self.performSegue(withIdentifier: K.Segue.configToShow.rawValue, sender: self)
             }
             return v
         }())
-        
-        views.append(fullSeparator())
-        
-        views.append(MarginStackCell(height: 40, backgroundColor: marginColor))
-        
-        views.append(HeaderStackCell(title: "MarginStackCell", backgroundColor: marginColor))
-        
-        views.append(MarginStackCell(height: 40, backgroundColor: marginColor))
-        
-        views.append(HeaderStackCell(title: "SeparatorStackCell", backgroundColor: marginColor))
-        
-        views.append(fullSeparator())
-        
-        views.append(MarginStackCell(height: 40, backgroundColor: marginColor))
         
         stackScrollView.append(views: views)
         

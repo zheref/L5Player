@@ -43,7 +43,7 @@ class ShowViewController: UIViewController {
     
     var simultaneousBufferAmount: Int!
     
-    var sumultaneousDownloadAmount: Int!
+    var minimumBufferedVideosToStart: Int!
     
     // MARK: Computed Properties
     
@@ -63,13 +63,13 @@ class ShowViewController: UIViewController {
     
     // MARK: Exposed Operations
     
-    func setup(assets: [L5Asset],
+    internal func setup(assets: [L5Asset],
                player: L5PlayerProtocol,
                manager: L5PreloadingManagerProtocol,
                bufferer: L5BufferPreloaderProtocol,
                downloader: L5DownloadPreloaderProtocol,
                simultaneousBufferAmount: Int,
-               sumultaneousDownloadAmount: Int) {
+               minimumBufferedVideosToStart: Int) {
         
         self.assets = assets
         self.player = player
@@ -80,7 +80,7 @@ class ShowViewController: UIViewController {
         self.bufferer = bufferer
         self.downloader = downloader
         self.simultaneousBufferAmount = simultaneousBufferAmount
-        self.sumultaneousDownloadAmount = sumultaneousDownloadAmount
+        self.minimumBufferedVideosToStart = minimumBufferedVideosToStart
     }
     
     // MARK: LifeCycle

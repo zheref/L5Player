@@ -23,7 +23,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="Iuh-A8-uYY" kind="show" id="p9U-Mi-ehm"/>
+                        <segue destination="Iuh-A8-uYY" kind="show" identifier="configToShow" id="p9U-Mi-ehm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

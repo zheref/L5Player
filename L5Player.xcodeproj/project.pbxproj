@@ -41,6 +41,7 @@
 		2BBF22FA1F2167B700A278C3 /* SwiftyBeaver.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BBF22FB1F21A1D400A278C3 /* StackScrollView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6DBA551F20F190004A68AA /* StackScrollView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BBF22FD1F21A21100A278C3 /* HLSion.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6DBA501F20E983004A68AA /* HLSion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2BBF22FF1F22417F00A278C3 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22FE1F22417F00A278C3 /* K.swift */; };
 		78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */; };
 		78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C71F1FBC33007EBA17 /* L5Asset.swift */; };
 		78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */; };
@@ -118,6 +119,7 @@
 		2BBF22EF1F21454500A278C3 /* L5PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PlayerView.swift; path = Views/L5PlayerView.swift; sourceTree = "<group>"; };
 		2BBF22F31F2148FE00A278C3 /* L5PlayerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PlayerProtocol.swift; path = Player/L5PlayerProtocol.swift; sourceTree = "<group>"; };
 		2BBF22F51F214A2600A278C3 /* L5QueuePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5QueuePlayer.swift; path = Player/L5QueuePlayer.swift; sourceTree = "<group>"; };
+		2BBF22FE1F22417F00A278C3 /* K.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloaderProtocol.swift; path = Preloaders/L5PreloaderProtocol.swift; sourceTree = "<group>"; };
 		78B356C71F1FBC33007EBA17 /* L5Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5Asset.swift; sourceTree = "<group>"; };
 		78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreemptiveBufferPreloader.swift; path = Preloaders/L5PreemptiveBufferPreloader.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				2B6DBA571F20F34F004A68AA /* StackCells */,
+				2BBF22FE1F22417F00A278C3 /* K.swift */,
 				2B04560C1F185A35005D8D82 /* AppDelegate.swift */,
 				2B04560E1F185A35005D8D82 /* ViewController.swift */,
 				2BBF22EB1F21444A00A278C3 /* ShowViewController.swift */,
@@ -482,6 +485,7 @@
 				2B6DBA631F211DE6004A68AA /* ButtonStackCell.swift in Sources */,
 				2B6DBA6A1F212591004A68AA /* StackCellBase.swift in Sources */,
 				2B6DBA5F1F211AC9004A68AA /* SeparatorStackCell.swift in Sources */,
+				2BBF22FF1F22417F00A278C3 /* K.swift in Sources */,
 				2B6DBA6C1F2125F2004A68AA /* MarginStackCell.swift in Sources */,
 				2B6DBA5D1F20F470004A68AA /* SwitchStackCell.swift in Sources */,
 				2B6DBA5B1F20F3B2004A68AA /* TextFieldStackCell.swift in Sources */,
