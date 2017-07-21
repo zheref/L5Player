@@ -21,9 +21,10 @@ class ShowViewController: UIViewController {
     
     @IBOutlet weak var playerView: L5PlayerView!
     @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
     // MARK: Stored Properties
     
     /// The player responsible of the media playback
@@ -39,7 +40,7 @@ class ShowViewController: UIViewController {
     
     var bufferer: L5BufferPreloaderProtocol!
     
-    var downloader: L5DownloadPreloaderProtocol!
+    var downloader: L5DownloadPreloaderProtocol?
     
     var simultaneousBufferAmount: Int!
     
@@ -198,13 +199,15 @@ class ShowViewController: UIViewController {
     
     /// Change elements to display loading screen. Specially designed for giving time for loading assets
     private func showLoadingScreen() {
-        loadingView.isHidden = false
+        leftButton.isUserInteractionEnabled = false
+        rightButton.isUserInteractionEnabled = false
         activityIndicator.startAnimating()
     }
     
     /// Change elements to hide loading screen. Should be run when assets are ready to play smoothly
     fileprivate func hideLoadingScreen() {
-        loadingView.isHidden = true
+        leftButton.isUserInteractionEnabled = true
+        rightButton.isUserInteractionEnabled = true
         activityIndicator.stopAnimating()
     }
     

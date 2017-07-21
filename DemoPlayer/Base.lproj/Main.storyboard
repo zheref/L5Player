@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,13 +47,50 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7V-mX-EMe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7V-mX-EMe" customClass="L5PlayerView" customModule="L5Player">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FRu-fd-cw9">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XF-3a-Jj9">
+                                <rect key="frame" x="0.0" y="20" width="187.5" height="667"/>
+                                <connections>
+                                    <action selector="userDidTapLeftActiveSection:" destination="Iuh-A8-uYY" eventType="touchUpInside" id="hDi-36-cbj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNI-mG-7o2">
+                                <rect key="frame" x="187.5" y="20" width="187.5" height="667"/>
+                                <connections>
+                                    <action selector="userDidTapRightActiveSection:" destination="Iuh-A8-uYY" eventType="touchUpInside" id="ECY-aw-sSE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q7V-mX-EMe" firstAttribute="width" secondItem="Gur-Kl-pmv" secondAttribute="width" id="3NP-P2-Ve1"/>
+                            <constraint firstItem="FRu-fd-cw9" firstAttribute="centerY" secondItem="Gur-Kl-pmv" secondAttribute="centerY" id="73I-By-ckg"/>
+                            <constraint firstItem="FRu-fd-cw9" firstAttribute="centerX" secondItem="Gur-Kl-pmv" secondAttribute="centerX" id="8p5-zJ-mBU"/>
+                            <constraint firstItem="3XF-3a-Jj9" firstAttribute="height" secondItem="Gur-Kl-pmv" secondAttribute="height" id="BxL-BQ-Qhp"/>
+                            <constraint firstItem="3XF-3a-Jj9" firstAttribute="top" secondItem="rhp-Vw-EPc" secondAttribute="bottom" id="DUR-KR-g0q"/>
+                            <constraint firstItem="q7V-mX-EMe" firstAttribute="centerX" secondItem="Gur-Kl-pmv" secondAttribute="centerX" id="EWe-Rq-qXf"/>
+                            <constraint firstItem="q7V-mX-EMe" firstAttribute="centerY" secondItem="Gur-Kl-pmv" secondAttribute="centerY" id="FfY-ec-i73"/>
+                            <constraint firstItem="3XF-3a-Jj9" firstAttribute="width" secondItem="Gur-Kl-pmv" secondAttribute="width" multiplier="0.5" id="GPj-D1-h15"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bNI-mG-7o2" secondAttribute="trailing" constant="-16" id="TvF-LJ-PoS"/>
+                            <constraint firstItem="bNI-mG-7o2" firstAttribute="top" secondItem="rhp-Vw-EPc" secondAttribute="bottom" id="YKD-VI-onc"/>
+                            <constraint firstItem="3XF-3a-Jj9" firstAttribute="leading" secondItem="Gur-Kl-pmv" secondAttribute="leadingMargin" constant="-16" id="bma-WL-kEa"/>
+                            <constraint firstItem="bNI-mG-7o2" firstAttribute="height" secondItem="Gur-Kl-pmv" secondAttribute="height" id="pRe-vl-Ref"/>
+                            <constraint firstItem="q7V-mX-EMe" firstAttribute="height" secondItem="Gur-Kl-pmv" secondAttribute="height" id="rdX-QG-lgF"/>
+                            <constraint firstItem="bNI-mG-7o2" firstAttribute="width" secondItem="Gur-Kl-pmv" secondAttribute="width" multiplier="0.5" id="yg8-Hl-o71"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="FRu-fd-cw9" id="iUM-w3-4Jr"/>
+                        <outlet property="leftButton" destination="3XF-3a-Jj9" id="4aj-gO-6hO"/>
+                        <outlet property="playerView" destination="q7V-mX-EMe" id="EF6-lu-dyw"/>
+                        <outlet property="posterImageView" destination="iFk-3x-vlJ" id="Nw2-g1-wbb"/>
+                        <outlet property="rightButton" destination="bNI-mG-7o2" id="86k-01-qH1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bj-Gc-v0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
