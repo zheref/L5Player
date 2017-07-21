@@ -36,7 +36,7 @@ public class L5Asset {
     
     // MARK: - INITIALIZERS
     
-    init(url: URL, forId id: String) {
+    public init(url: URL, forId id: String) {
         self.url = url
         self.media = AVAsset(url: url)
         

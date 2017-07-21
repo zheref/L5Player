@@ -29,10 +29,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Show View Controller-->
         <scene sceneID="jMy-VC-M7A">
             <objects>
-                <viewController id="Iuh-A8-uYY" sceneMemberID="viewController">
+                <viewController id="Iuh-A8-uYY" customClass="ShowViewController" customModule="DemoPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rhp-Vw-EPc"/>
                         <viewControllerLayoutGuide type="bottom" id="a8T-qI-6Qf"/>

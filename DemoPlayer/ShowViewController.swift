@@ -63,15 +63,13 @@ class ShowViewController: UIViewController {
     
     // MARK: Exposed Operations
     
-    internal func setup(assets: [L5Asset],
-               player: L5PlayerProtocol,
-               manager: L5PreloadingManagerProtocol,
-               bufferer: L5BufferPreloaderProtocol,
-               downloader: L5DownloadPreloaderProtocol,
-               simultaneousBufferAmount: Int,
-               minimumBufferedVideosToStart: Int) {
+    internal func setup(player: L5PlayerProtocol,
+                        manager: L5PreloadingManagerProtocol,
+                        bufferer: L5BufferPreloaderProtocol,
+                        downloader: L5DownloadPreloaderProtocol,
+                        simultaneousBufferAmount: Int,
+                        minimumBufferedVideosToStart: Int) {
         
-        self.assets = assets
         self.player = player
         
         self.originalPlayer = player.originalPlayer
@@ -249,6 +247,22 @@ class ShowViewController: UIViewController {
         player.goNext()
     }
     
+    
+}
+
+extension ShowViewController : L5PreloaderDelegate {
+    
+    func didPreload(asset: L5Asset, by amount: Double) {
+        
+    }
+    
+    func didFinishPreloading(asset: L5Asset) {
+        
+    }
+    
+    func didFailPreloading(asset: L5Asset, withError error: Error) {
+        
+    }
     
 }
 

@@ -17,21 +17,21 @@ protocol L5HLSionDownloadPreloaderProtocol : L5DownloadPreloaderProtocol {
 }
 
 
-class L5HLSionDownloadPreloader : L5HLSionDownloadPreloaderProtocol {
+public class L5HLSionDownloadPreloader : L5HLSionDownloadPreloaderProtocol {
     
     // MARK: - STORED PROPERTIES
     
-    var delegate: L5PreloaderDelegate
+    public var delegate: L5PreloaderDelegate
     
     // MARK: - INITIALIZERS
     
-    init(delegate: L5PreloaderDelegate) {
+    public init(delegate: L5PreloaderDelegate) {
         self.delegate = delegate
     }
     
     // MARK: - EXPOSED OPERATIONS
     
-    func preload(asset: L5Asset, completion: @escaping PreloadCompletion) {
+    public func preload(asset: L5Asset, completion: @escaping PreloadCompletion) {
         asset.downloadStatus = .downloading
         
         let hlsion = HLSion(url: asset.url, name: asset.id).download { [weak self] (progressPercentage) in

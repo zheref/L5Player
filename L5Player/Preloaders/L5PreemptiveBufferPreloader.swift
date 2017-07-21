@@ -9,33 +9,33 @@
 import Foundation
 
 
-protocol L5PreemptiveBufferPreloaderProtocol : L5BufferPreloaderProtocol {
+public protocol L5PreemptiveBufferPreloaderProtocol : L5BufferPreloaderProtocol {
     
 }
 
 
-class L5PreemptiveBufferPreloader : L5PreemptiveBufferPreloaderProtocol {
+public class L5PreemptiveBufferPreloader : L5PreemptiveBufferPreloaderProtocol {
     
     // MARK: - CLASS PROPERTIES
     
-    static var propertiesToPreload = ["playable",
-                                      "tracks",
-                                      "duration",
-                                      "hasProtectedContent"]
+    private static var propertiesToPreload = ["playable",
+                                              "tracks",
+                                              "duration",
+                                              "hasProtectedContent"]
     
     // MARK: - STORED PROPERTIES
     
-    var delegate: L5PreloaderDelegate
+    public var delegate: L5PreloaderDelegate
     
     // MARK: - INITIALIZERS
     
-    init(delegate: L5PreloaderDelegate) {
+    public init(delegate: L5PreloaderDelegate) {
         self.delegate = delegate
     }
     
     // MARK: - EXPOSED OPERATIONS
     
-    func preload(asset: L5Asset, completion: @escaping PreloadCompletion) {
+    public func preload(asset: L5Asset, completion: @escaping PreloadCompletion) {
         asset.bufferStatus = .buffering
         
         asset.media?.loadValuesAsynchronously(forKeys: L5PreemptiveBufferPreloader.propertiesToPreload) {

@@ -17,7 +17,7 @@ protocol L5CommonPreloadingManagerProtocol : L5PreloadingManagerProtocol {
 }
 
 
-public class L5CommonPreloadingManager {
+public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
     
     // MARK: - CLASS PROPERTIES
     
@@ -51,12 +51,11 @@ public class L5CommonPreloadingManager {
     ///   - delegate: The responsible to answer for the different events during the assets management
     ///   - bufferer: The responsible to provide a mechanism to preemptively load videos by buffering
     ///   - downloader: The reponsible to provide a mechanism to cache videos by downloading
-    init(assets: [L5Asset],
-         bufferer: L5BufferPreloaderProtocol? =  nil,
-         downloader: L5DownloadPreloaderProtocol? = nil) {
+    public required init(assets: [L5Asset],
+                         bufferer: L5BufferPreloaderProtocol? =  nil,
+                         downloader: L5DownloadPreloaderProtocol? = nil) {
         
         self.assets = assets
-        
         setup(bufferer: bufferer, downloader: downloader)
     }
     
@@ -67,15 +66,15 @@ public class L5CommonPreloadingManager {
     /// - Parameters:
     ///   - bufferer: The responsible to provide a mechanism to preemptively load videos by buffering
     ///   - downloader: The reponsible to provide a mechanism to cache videos by downloading
-    func setup(bufferer: L5BufferPreloaderProtocol? = nil,
-               downloader: L5DownloadPreloaderProtocol? = nil) {
+    public func setup(bufferer: L5BufferPreloaderProtocol? = nil,
+                      downloader: L5DownloadPreloaderProtocol? = nil) {
         
         self.bufferer = bufferer
         self.downloader = downloader
     }
     
     /// Starts preloading videos by buffering and/or caching according to the configuration
-    func startPreloading() {
+    public func startPreloading() {
         for i in 0...L5CommonPreloadingManager.surroundBy {
             preload(index: i)
         }
@@ -97,7 +96,7 @@ public class L5CommonPreloadingManager {
     /// Preload the video corresponding to the given index by buffering and/or downloading
     /// according to the setup configuration.
     /// - Parameter index: The index to be preloaded
-    func preload(index: Int) {
+    public func preload(index: Int) {
         let asset = assets[index]
         
         log.debug("Starting preloading: \(index) -> \(asset.url.absoluteURL)")

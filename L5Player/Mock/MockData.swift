@@ -9,9 +9,9 @@
 import Foundation
 
 
-class MockData {
+public class MockData {
     
-    static let hlsVideoURLs = [
+    public static let hlsVideoURLs = [
         "https://cdn-test.li5.tv/products/2017/06/26/0c04e3aa-d69a-4a85-aae0-877a051e5fbe/hls.m3u8",
         "https://cdn-test.li5.tv/products/2017/06/26/977aaddc-163e-41af-9f16-8c4e8273f483/hls.m3u8",
         "https://cdn-test.li5.tv/products/2017/06/26/1ba5e997-36de-490a-889f-4efdc5fdf454/hls.m3u8",
@@ -23,7 +23,7 @@ class MockData {
         "https://cdn-test.li5.tv/products/2017/06/26/c549384b-eb34-4b64-b7ca-a3554acc87cc/hls.m3u8"
     ]
     
-    static let hardcodedHls = [
+    public static let hardcodedHls = [
         "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
         "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
         "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
