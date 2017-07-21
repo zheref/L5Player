@@ -32,11 +32,15 @@
 		2B6DBA6A1F212591004A68AA /* StackCellBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA691F212591004A68AA /* StackCellBase.swift */; };
 		2B6DBA6C1F2125F2004A68AA /* MarginStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA6B1F2125F2004A68AA /* MarginStackCell.swift */; };
 		2BBF22EC1F21444A00A278C3 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22EB1F21444A00A278C3 /* ShowViewController.swift */; };
-		2BBF22ED1F2144D000A278C3 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */; };
 		2BBF22F01F21454500A278C3 /* L5PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22EF1F21454500A278C3 /* L5PlayerView.swift */; };
 		2BBF22F11F21459E00A278C3 /* L5Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0455EC1F1859EC005D8D82 /* L5Player.framework */; };
 		2BBF22F41F2148FE00A278C3 /* L5PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22F31F2148FE00A278C3 /* L5PlayerProtocol.swift */; };
 		2BBF22F61F214A2600A278C3 /* L5QueuePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22F51F214A2600A278C3 /* L5QueuePlayer.swift */; };
+		2BBF22F81F2166CF00A278C3 /* EasyPeasy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6DBA641F21223A004A68AA /* EasyPeasy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2BBF22F91F2167B700A278C3 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */; };
+		2BBF22FA1F2167B700A278C3 /* SwiftyBeaver.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2BBF22FB1F21A1D400A278C3 /* StackScrollView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6DBA551F20F190004A68AA /* StackScrollView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2BBF22FD1F21A21100A278C3 /* HLSion.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6DBA501F20E983004A68AA /* HLSion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */; };
 		78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C71F1FBC33007EBA17 /* L5Asset.swift */; };
 		78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */; };
@@ -55,6 +59,31 @@
 			remoteInfo = L5Player;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2BBF22F71F2166C300A278C3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2BBF22FB1F21A1D400A278C3 /* StackScrollView.framework in CopyFiles */,
+				2BBF22F81F2166CF00A278C3 /* EasyPeasy.framework in CopyFiles */,
+				2BBF22FA1F2167B700A278C3 /* SwiftyBeaver.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BBF22FC1F21A20200A278C3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2BBF22FD1F21A21100A278C3 /* HLSion.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2B0455EC1F1859EC005D8D82 /* L5Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = L5Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,9 +150,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBF22F91F2167B700A278C3 /* SwiftyBeaver.framework in Frameworks */,
 				2BBF22F11F21459E00A278C3 /* L5Player.framework in Frameworks */,
 				2B6DBA651F21223A004A68AA /* EasyPeasy.framework in Frameworks */,
-				2BBF22ED1F2144D000A278C3 /* SwiftyBeaver.framework in Frameworks */,
 				2B6DBA661F2123F1004A68AA /* StackScrollView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +323,7 @@
 				2B0455E81F1859EC005D8D82 /* Frameworks */,
 				2B0455E91F1859EC005D8D82 /* Headers */,
 				2B0455EA1F1859EC005D8D82 /* Resources */,
+				2BBF22FC1F21A20200A278C3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -329,6 +359,7 @@
 				2B0456061F185A35005D8D82 /* Sources */,
 				2B0456071F185A35005D8D82 /* Frameworks */,
 				2B0456081F185A35005D8D82 /* Resources */,
+				2BBF22F71F2166C300A278C3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
