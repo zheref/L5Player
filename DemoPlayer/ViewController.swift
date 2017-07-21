@@ -103,10 +103,12 @@ class ViewController: UIViewController {
     }
     
     func managementMechanism(assets: [L5Asset],
-                             bufferer: L5BufferPreloaderProtocol,
-                             downloader: L5DownloadPreloaderProtocol) -> L5PreloadingManagerProtocol
+                             sameTimeBufferAmount: Int,
+                             minimumBufferedVideosToStart: Int) -> L5PreloadingManagerProtocol
     {
-        return L5CommonPreloadingManager(assets: assets, bufferer: bufferer, downloader: downloader)
+        return L5CommonPreloadingManager(assets: assets,
+                                         sameTimeBufferAmount: sameTimeBufferAmount,
+                                         minimumBufferedVideosToStartPlaying: minimumBufferedVideosToStart)
     }
     
     // MARK: - LIFECYCLE
@@ -123,18 +125,19 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ShowViewController {
-            let bufferer = bufferMechanism(delegate: vc)
-            let downloader = cachingMechanism(delegate: vc)
             let manager = managementMechanism(assets: assets,
-                                              bufferer: bufferer,
-                                              downloader: downloader)
+                                              sameTimeBufferAmount: sameTimeBufferAmount!,
+                                              minimumBufferedVideosToStart: minimumVideosToBufferBeforePlayback!)
+            let bufferer = bufferMechanism(delegate: manager)
+            let downloader = cachingMechanism(delegate: manager)
+            manager.setup(bufferer: bufferer, downloader: downloader)
+            
+            
             
             vc.setup(player: L5QueuePlayer(),
                      manager: manager,
                      bufferer: bufferer,
-                     downloader: downloader,
-                     simultaneousBufferAmount: sameTimeBufferAmount!,
-                     minimumBufferedVideosToStart: minimumVideosToBufferBeforePlayback!)
+                     downloader: downloader)
         }
     }
     

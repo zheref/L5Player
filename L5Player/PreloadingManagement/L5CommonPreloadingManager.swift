@@ -39,6 +39,12 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
     /// The instance responsible of downloading into local storage to cache content
     private var downloader: L5DownloadPreloaderProtocol?
     
+    /// The amount of videos that can be buffered at the same time
+    var simultaneousBufferAmount: Int
+    
+    /// The minimum amount of videos that must be successfully buffered before starting playback
+    var minimumBufferedVideosToStart: Int
+    
     // MARK: - INSTANCE OPERATIONS
     
     
@@ -48,13 +54,19 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
     ///
     /// - Parameters:
     ///   - assets: The list of assets to be managed
+    ///   - sameTimeBufferAmount: The amount of videos that can be buffered at the same time
+    ///   - minimumBufferedVideosToStart: The amount of videos that must be successfully buffered before playback
     ///   - delegate: The responsible to answer for the different events during the assets management
     ///   - bufferer: The responsible to provide a mechanism to preemptively load videos by buffering
     ///   - downloader: The reponsible to provide a mechanism to cache videos by downloading
     public required init(assets: [L5Asset],
+                         sameTimeBufferAmount: Int,
+                         minimumBufferedVideosToStartPlaying: Int,
                          bufferer: L5BufferPreloaderProtocol? =  nil,
                          downloader: L5DownloadPreloaderProtocol? = nil) {
         
+        self.simultaneousBufferAmount = sameTimeBufferAmount
+        self.minimumBufferedVideosToStart = minimumBufferedVideosToStartPlaying
         self.assets = assets
         setup(bufferer: bufferer, downloader: downloader)
     }

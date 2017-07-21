@@ -42,10 +42,6 @@ class ShowViewController: UIViewController {
     
     var downloader: L5DownloadPreloaderProtocol?
     
-    var simultaneousBufferAmount: Int!
-    
-    var minimumBufferedVideosToStart: Int!
-    
     // MARK: Computed Properties
     
     var playerLayer: AVPlayerLayer? {
@@ -67,9 +63,7 @@ class ShowViewController: UIViewController {
     internal func setup(player: L5PlayerProtocol,
                         manager: L5PreloadingManagerProtocol,
                         bufferer: L5BufferPreloaderProtocol,
-                        downloader: L5DownloadPreloaderProtocol,
-                        simultaneousBufferAmount: Int,
-                        minimumBufferedVideosToStart: Int) {
+                        downloader: L5DownloadPreloaderProtocol) {
         
         self.player = player
         
@@ -78,8 +72,6 @@ class ShowViewController: UIViewController {
         self.manager = manager
         self.bufferer = bufferer
         self.downloader = downloader
-        self.simultaneousBufferAmount = simultaneousBufferAmount
-        self.minimumBufferedVideosToStart = minimumBufferedVideosToStart
     }
     
     // MARK: LifeCycle
@@ -91,8 +83,10 @@ class ShowViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        addObserver(self, forKeyPath: #keyPath(ShowViewController.originalPlayer.currentItem.status), options: [.new, .initial], context: &playerViewControllerKVOContext)
-        addObserver(self, forKeyPath: #keyPath(ShowViewController.originalPlayer.currentItem), options: [.new, .initial], context: &playerViewControllerKVOContext)
+        addObserver(self, forKeyPath: #keyPath(ShowViewController.originalPlayer.currentItem.status),
+                    options: [.new, .initial], context: &playerViewControllerKVOContext)
+        addObserver(self, forKeyPath: #keyPath(ShowViewController.originalPlayer.currentItem),
+                    options: [.new, .initial], context: &playerViewControllerKVOContext)
         
         self.showLoadingScreen()
         
@@ -250,22 +244,6 @@ class ShowViewController: UIViewController {
         player.goNext()
     }
     
-    
-}
-
-extension ShowViewController : L5PreloaderDelegate {
-    
-    func didPreload(asset: L5Asset, by amount: Double) {
-        
-    }
-    
-    func didFinishPreloading(asset: L5Asset) {
-        
-    }
-    
-    func didFailPreloading(asset: L5Asset, withError error: Error) {
-        
-    }
     
 }
 

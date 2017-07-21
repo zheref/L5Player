@@ -9,9 +9,11 @@
 import Foundation
 
 
-public protocol L5PreloadingManagerProtocol {
+public protocol L5PreloadingManagerProtocol : L5PreloaderDelegate {
     
     init(assets: [L5Asset],
+         sameTimeBufferAmount: Int,
+         minimumBufferedVideosToStartPlaying: Int,
          bufferer: L5BufferPreloaderProtocol?,
          downloader: L5DownloadPreloaderProtocol?)
     
