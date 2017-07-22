@@ -21,10 +21,6 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
     
     // MARK: - CLASS PROPERTIES
     
-    fileprivate static var surroundBy = 1
-    
-    fileprivate static var minimumRequiredPreloadedAssets = 4
-    
     // MARK: - STORED PROPERTIES
     
     /// The array where assets are stored along with its media, metadata and status
@@ -87,7 +83,7 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
     
     /// Starts preloading videos by buffering and/or caching according to the configuration
     public func startPreloading() {
-        for i in 0...L5CommonPreloadingManager.surroundBy {
+        for i in 0...(self.simultaneousBufferAmount-1) {
             preload(index: i)
         }
     }
@@ -143,8 +139,7 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
     /// - Parameter bufferedAssetsAmount: The amount of already buffered assets
     /// - Returns: Whether it is enough to satisfy requirements or not
     private func isEnough(bufferedAssetsAmount: Int) -> Bool {
-        return bufferedAssetsAmount > L5CommonPreloadingManager.minimumRequiredPreloadedAssets &&
-            bufferedAssetsAmount < L5CommonPreloadingManager.minimumRequiredPreloadedAssets + 2
+        return bufferedAssetsAmount == self.minimumBufferedVideosToStart
     }
     
 }
