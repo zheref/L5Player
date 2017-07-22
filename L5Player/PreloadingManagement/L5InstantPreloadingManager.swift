@@ -49,8 +49,17 @@ public class L5InstantPreloadingManager : L5InstantPreloadingManagerProtocol {
     /// The minimum amount of videos that must be successfully buffered before starting playback
     var minimumBufferedVideosToStart: Int
     
-    // MARK: - INSTANCE OPERATIONS
+    // MARK: - COMPUTED PROPERTIES
     
+    public var currentAsset: L5Asset? {
+        if let delegate = delegate {
+            return assets[delegate.playingIndex]
+        }
+        
+        return nil
+    }
+    
+    // MARK: - INSTANCE OPERATIONS
     
     /// MARK: - Initializers
     

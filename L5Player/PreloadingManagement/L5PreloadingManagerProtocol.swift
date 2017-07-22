@@ -21,6 +21,8 @@ public protocol L5PreloadingManagerProtocol : L5PreloaderDelegate {
          bufferer: L5BufferPreloaderProtocol?,
          downloader: L5DownloadPreloaderProtocol?)
     
+    var currentAsset: L5Asset? { get }
+    
     var delegate: L5PreloadingManagerDelegate? { get set }
     
     func setup(bufferer: L5BufferPreloaderProtocol?, downloader: L5DownloadPreloaderProtocol?)

@@ -26,59 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DemoPlayer/ShowViewController.swift"
-            timestampString = "522377301.430121"
+            timestampString = "522395329.24205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
-            landmarkName = "managerIsReadyForPlayback()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DemoPlayer.ShowViewController.managerIsReadyForPlayback () -&gt; ()"
-                  moduleName = "DemoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/LI5-ZHEREF/L5Player/DemoPlayer/ShowViewController.swift"
-                  timestampString = "522393395.975134"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "242"
-                  endingLineNumber = "242"
-                  offsetFromSymbolStart = "19">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DemoPlayer.ShowViewController.(managerIsReadyForPlayback () -&gt; ()).(closure #1)"
-                  moduleName = "DemoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/LI5-ZHEREF/L5Player/DemoPlayer/ShowViewController.swift"
-                  timestampString = "522393395.977486"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "242"
-                  endingLineNumber = "242"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DemoPlayer/ShowViewController.swift"
-            timestampString = "522377335.695173"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "managerIsReadyForPlayback()"
             landmarkType = "7">
          </BreakpointContent>

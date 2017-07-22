@@ -27,9 +27,6 @@ class ShowViewController: UIViewController {
     /// The player responsible of the media playback
     var player: L5PlayerProtocol!
     
-    /// The asset models which URLs should be played
-    var assets = [L5Asset]()
-    
     /// The assets corresponding the trailers of each product to be eventually played
     var manager: L5PreloadingManagerProtocol!
     
@@ -41,14 +38,6 @@ class ShowViewController: UIViewController {
     
     var playerLayer: AVPlayerLayer? {
         return playerView.playerLayer
-    }
-    
-    var currentAsset: L5Asset? {
-        if player.currentIndex >= 0 && player.currentIndex < assets.count {
-            return assets[player.currentIndex]
-        } else {
-            return nil
-        }
     }
     
     // MARK: - INSTANCE OPERATIONS
@@ -114,7 +103,7 @@ class ShowViewController: UIViewController {
     
     /// Shows poster image if available in the product model and is a valid base 64 image
     fileprivate func setupPoster() {
-        guard let currentAsset = currentAsset else {
+        guard let currentAsset = manager.currentAsset else {
             log.error("Current assets is nil: \(player.currentIndex)")
             return
         }
