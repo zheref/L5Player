@@ -43,4 +43,8 @@ public protocol L5PlayerProtocol : class {
     
     func canInsert(_ item: AVPlayerItem, after afterItem: AVPlayerItem?) -> Bool
     
+    func settle()
+    
+    func loosen()
+    
 }

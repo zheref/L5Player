@@ -113,11 +113,15 @@ public class L5InstantPreloadingManager : L5InstantPreloadingManagerProtocol {
     /// according to the setup configuration.
     /// - Parameter index: The index to be preloaded
     public func preload(index: Int) {
-        let asset = assets[index]
+        let theAsset = assets[index]
         
-        log.debug("Starting preloading: \(index) -> \(asset.url.absoluteURL)")
+        log.debug("Starting preloading: \(index) -> \(theAsset.url.absoluteURL)")
         
-        bufferer?.preload(asset: asset) { [weak self] (asset, error) in
+        theAsset.bufferStatus = .buffering
+        
+        bufferer?.preload(asset: theAsset) { [weak self] (asset, error) in
+            theAsset.bufferStatus = .buffered
+            
             guard let this = self else {
                 log.warning("Lost reference of L5PreloadingManager.self")
                 return
@@ -130,7 +134,9 @@ public class L5InstantPreloadingManager : L5InstantPreloadingManagerProtocol {
             }
         }
         
-        let alreadyBufferingAssets = assets.filter { $0.bufferStatus == .buffering }
+        let alreadyBufferingAssets = assets.filter {
+            $0.bufferStatus == .buffering || $0.bufferStatus == .buffered
+        }
         
         if isEnough(bufferedAssetsAmount: alreadyBufferingAssets.count) {
             delegate?.managerIsReadyForPlayback()

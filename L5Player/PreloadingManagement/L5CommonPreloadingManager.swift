@@ -115,8 +115,6 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
                 return
             }
             
-            self?.delegate?.requiredAssetIsReady(asset)
-            
             if let nextIndexToDownload = this.assets.index(where: { $0.bufferStatus == .notStarted }) {
                 self?.preload(index: nextIndexToDownload)
             } else {
@@ -126,12 +124,9 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
             let alreadyBufferedAssets = this.assets.filter { $0.bufferStatus == .buffered }
             
             if this.isEnough(bufferedAssetsAmount: alreadyBufferedAssets.count) {
-                
-                self?.delegate?.managerDidFinishBufferingMinimumRequiredAssets()
+                self?.delegate?.managerIsReadyForPlayback()
             }
         }
-        
-        delegate?.requiredAssetIsBuffering(asset)
     }
     
     /// Determines whether the given amount of buffered assets is enough to satisfy the setup

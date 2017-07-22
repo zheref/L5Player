@@ -145,9 +145,18 @@ class ViewController: UIViewController {
                              sameTimeBufferAmount: Int,
                              minimumBufferedVideosToStart: Int) -> L5PreloadingManagerProtocol
     {
-        return L5CommonPreloadingManager(assets: assets,
-                                         sameTimeBufferAmount: sameTimeBufferAmount,
-                                         minimumBufferedVideosToStartPlaying: minimumBufferedVideosToStart)
+        switch selectedManagementMechanism {
+        case .L5CommonPreloadingManager:
+            return L5CommonPreloadingManager(assets: assets,
+                                             sameTimeBufferAmount: sameTimeBufferAmount,
+                                             minimumBufferedVideosToStartPlaying: minimumBufferedVideosToStart)
+        case .L5InstantPreloadingManager:
+            return L5InstantPreloadingManager(assets: assets,
+                                              sameTimeBufferAmount: sameTimeBufferAmount,
+                                              minimumBufferedVideosToStartPlaying: minimumBufferedVideosToStart)
+        }
+        
+        
     }
     
     // MARK: - LIFECYCLE

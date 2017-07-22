@@ -10,9 +10,6 @@ import UIKit
 import AVFoundation
 import L5Player
 
-
-private var playerViewControllerKVOContext = 0
-
 class ShowViewController: UIViewController {
     
     // MARK: - PROPERTIES
@@ -29,8 +26,6 @@ class ShowViewController: UIViewController {
     
     /// The player responsible of the media playback
     var player: L5PlayerProtocol!
-    
-    var originalPlayer: AVPlayer!
     
     /// The asset models which URLs should be played
     var assets = [L5Asset]()
@@ -67,8 +62,6 @@ class ShowViewController: UIViewController {
         
         self.player = player
         
-        self.originalPlayer = player.originalPlayer
-        
         self.manager = manager
         self.bufferer = bufferer
         self.downloader = downloader
@@ -83,18 +76,15 @@ class ShowViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        addObserver(self, forKeyPath: #keyPath(ShowViewController.originalPlayer.currentItem.status),
-                    options: [.new, .initial], context: &playerViewControllerKVOContext)
-        addObserver(self, forKeyPath: #keyPath(ShowViewController.originalPlayer.currentItem),
-                    options: [.new, .initial], context: &playerViewControllerKVOContext)
+        player.settle()
         
-        self.showLoadingScreen()
-        
-        playerView.playerLayer.player = originalPlayer
+        playerView.playerLayer.player = player.originalPlayer
         
         manager.delegate = self
         
         manager.startPreloading()
+        
+        self.showLoadingScreen()
         
         self.setupPoster()
     }
@@ -105,11 +95,7 @@ class ShowViewController: UIViewController {
         
         player.pause()
         
-        removeObserver(self, forKeyPath: #keyPath(ShowViewController.originalPlayer.currentItem.status),
-                       context: &playerViewControllerKVOContext)
-        
-        removeObserver(self, forKeyPath: #keyPath(ShowViewController.originalPlayer.currentItem),
-                       context: &playerViewControllerKVOContext)
+        player.loosen()
     }
     
     
@@ -124,46 +110,6 @@ class ShowViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    // MARK: KVO Observation
-    
-    // Update our UI when player or `player.currentItem` changes.
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        // Make sure the this KVO callback was intended for this view controller.
-        guard context == &playerViewControllerKVOContext else {
-            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-            return
-        }
-        
-        if keyPath == #keyPath(ShowViewController.originalPlayer.currentItem) {
-            //queueDidChangeWithOldPlayerItems(oldPlayerItems: [], newPlayerItems: player.items())
-        } else if keyPath ==  #keyPath(ShowViewController.originalPlayer.currentItem.status) {
-            // Display an error if status becomes `.Failed`.
-            
-            /*
-             Handle `NSNull` value for `NSKeyValueChangeNewKey`, i.e. when
-             `player.currentItem` is nil.
-             */
-            let newStatus: AVPlayerItemStatus
-            
-            if let newStatusAsNumber = change?[NSKeyValueChangeKey.newKey] as? NSNumber {
-                newStatus = AVPlayerItemStatus(rawValue: newStatusAsNumber.intValue)!
-                
-                if newStatus == .readyToPlay {
-                    player.goToZero()
-                    player.play()
-                }
-            }
-            else {
-                newStatus = .unknown
-            }
-            
-            if newStatus == .failed {
-                handleError(with: player.currentItem?.error?.localizedDescription, error: player.currentItem?.error)
-            }
-        }
     }
     
     /// Shows poster image if available in the product model and is a valid base 64 image
@@ -194,35 +140,6 @@ class ShowViewController: UIViewController {
         activityIndicator.stopAnimating()
     }
     
-    fileprivate func enqueue(asset: L5Asset) {
-        if let originalAsset = asset.media {
-            let playerItem = AVPlayerItem(asset: originalAsset)
-            player.insert(playerItem, after: nil)
-        } else {
-            log.error("Asset not enqued because media is not available: \(asset.id)")
-        }
-    }
-    
-    // MARK: Error Handling
-    
-    func handleError(with message: String?, error: Error? = nil) {
-        log.error("Error occurred with message: \(message), error: \(error).")
-        
-        let alertTitle = NSLocalizedString("alert.error.title", comment: "Alert title for errors")
-        
-        let alertMessage = message ?? NSLocalizedString("error.default.description", comment: "Default error message when no NSError provided")
-        
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        
-        let alertActionTitle = NSLocalizedString("alert.error.actions.OK", comment: "OK on error alert")
-        let alertAction = UIAlertAction(title: alertActionTitle, style: .default, handler: nil)
-        
-        alert.addAction(alertAction)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    
     // MARK: Actions
     
     @IBAction func userDidTapLeftActiveSection(_ sender: Any) {
@@ -238,24 +155,7 @@ class ShowViewController: UIViewController {
 
 extension ShowViewController : L5PreloadingManagerDelegate {
     
-    var playingIndex: Int {
-        return player.currentIndex
-    }
-    
-    func requiredAssetIsBuffering(_ asset: L5Asset) {
-        log.debug("Enqueuing buffering asset(\(asset.id))")
-        enqueue(asset: asset)
-    }
-    
-    func requiredAssetIsReady(_ asset: L5Asset) {
-        log.debug("Finished buffering asset(\(asset.id))")
-    }
-    
-    func requiredAssetIsDownloaded(_ asset: L5Asset) {
-        log.debug("Finished downloading asset(\(asset.id))")
-    }
-    
-    func managerDidFinishBufferingMinimumRequiredAssets() {
+    func managerIsReadyForPlayback() {
         DispatchQueue.main.async { [unowned self] in
             log.debug("Finished buffering minimum required assets!!!")
             self.hideLoadingScreen()
@@ -263,7 +163,8 @@ extension ShowViewController : L5PreloadingManagerDelegate {
         }
     }
     
-    func managerDidFinishDownloadingRequiredAssets() {
-        log.verbose("Finished downloading")
+    var playingIndex: Int {
+        return player.currentIndex
     }
+    
 }
