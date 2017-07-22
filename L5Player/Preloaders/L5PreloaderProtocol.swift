@@ -21,10 +21,20 @@ public protocol L5PreloaderProtocol {
     
 }
 
+public enum L5BufferPreloaderOption : String {
+    case L5PreemptiveBufferPreloader
+    case L5BuffereXPreloader
+}
+
 /// Specialization of L5PreloaderProtocol focused on buffering purposes meaning preemptive loading
 /// that doesn't persist.
 public protocol L5BufferPreloaderProtocol : L5PreloaderProtocol {
     
+}
+
+public enum L5DownloadPreloaderOption : String {
+    case L5AssetDownloadTaskPreloader
+    case L5HLSionDownloadPreloader
 }
 
 /// Specialization of L5PreloaderProtocol focused on downloading purposes meaning caching

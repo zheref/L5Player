@@ -9,6 +9,12 @@
 import Foundation
 import AVFoundation
 
+public enum L5PlayerOption : String {
+    case L5QueuePlayer
+    case DVPlaylistPlayer
+    case L5PlaylistPlayer
+}
+
 public protocol L5PlayerProtocol : class {
     
     var originalPlayer: AVPlayer { get }

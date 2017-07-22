@@ -30,26 +30,63 @@ class ViewController: UIViewController {
         return v
     }()
     
-    private lazy var bufferMechanismPickerStackCell: PickerStackCell = {
+    fileprivate lazy var selectedBufferMechanism: L5BufferPreloaderOption = .L5PreemptiveBufferPreloader
+    
+    fileprivate var bufferMechanisms: [L5BufferPreloaderOption] = [
+        .L5PreemptiveBufferPreloader,
+        .L5BuffereXPreloader
+    ]
+    
+    fileprivate lazy var bufferMechanismPickerStackCell: PickerStackCell = { [unowned self] in
         let v = PickerStackCell()
+        v.datasource = self
+        v.delegate = self
         v.set(title: " ")
         return v
     }()
     
-    private lazy var managingMechanismPickerStackCell: PickerStackCell = {
+    fileprivate var selectedManagementMechanism: L5PreloadingManagerOption = .L5CommonPreloadingManager
+    
+    fileprivate var managementMechanisms: [L5PreloadingManagerOption] = [
+        .L5CommonPreloadingManager,
+        .L5AdvancedPreloadingManager
+    ]
+    
+    fileprivate lazy var managingMechanismPickerStackCell: PickerStackCell = { [unowned self] in
         let v = PickerStackCell()
+        v.datasource = self
+        v.delegate = self
         v.set(title: " ")
         return v
     }()
     
-    private lazy var cachingMechanismPickerStackCell: PickerStackCell = {
+    fileprivate var selectedCachingMechanism: L5DownloadPreloaderOption = .L5AssetDownloadTaskPreloader
+    
+    fileprivate var cachingMechanisms: [L5DownloadPreloaderOption] = [
+        .L5AssetDownloadTaskPreloader,
+        .L5HLSionDownloadPreloader
+    ]
+    
+    fileprivate lazy var cachingMechanismPickerStackCell: PickerStackCell = { [unowned self] in
         let v = PickerStackCell()
+        v.datasource = self
+        v.delegate = self
         v.set(title: " ")
         return v
     }()
     
-    private lazy var playerMechanismPickerStackCell: PickerStackCell = {
+    fileprivate var selectedPlayerMechanism: L5PlayerOption = .L5QueuePlayer
+    
+    fileprivate var playerMechanisms: [L5PlayerOption] = [
+        L5PlayerOption.L5QueuePlayer,
+        L5PlayerOption.DVPlaylistPlayer,
+        L5PlayerOption.L5PlaylistPlayer
+    ]
+    
+    fileprivate lazy var playerMechanismPickerStackCell: PickerStackCell = { [unowned self] in
         let v = PickerStackCell()
+        v.datasource = self
+        v.delegate = self
         v.set(title: " ")
         return v
     }()
@@ -132,8 +169,6 @@ class ViewController: UIViewController {
             let downloader = cachingMechanism(delegate: manager)
             manager.setup(bufferer: bufferer, downloader: downloader)
             
-            
-            
             vc.setup(player: L5QueuePlayer(),
                      manager: manager,
                      bufferer: bufferer,
@@ -186,24 +221,28 @@ class ViewController: UIViewController {
                                      backgroundColor: marginColor))
         
         views.append(bufferMechanismPickerStackCell)
+        bufferMechanismPickerStackCell.set(title: selectedBufferMechanism.rawValue)
         
         views.append(fullSeparator())
         views.append(HeaderStackCell(title: "Assets management mechanism",
                                      backgroundColor: marginColor))
         
         views.append(managingMechanismPickerStackCell)
+        managingMechanismPickerStackCell.set(title: selectedManagementMechanism.rawValue)
         
         views.append(fullSeparator())
         views.append(HeaderStackCell(title: "Caching mechanism",
                                      backgroundColor: marginColor))
         
         views.append(cachingMechanismPickerStackCell)
+        cachingMechanismPickerStackCell.set(title: selectedCachingMechanism.rawValue)
         
         views.append(fullSeparator())
         views.append(HeaderStackCell(title: "Player",
                                      backgroundColor: marginColor))
         
         views.append(playerMechanismPickerStackCell)
+        playerMechanismPickerStackCell.set(title: selectedPlayerMechanism.rawValue)
         
         views.append(MarginStackCell(height: 40,
                                      backgroundColor: marginColor))
@@ -229,5 +268,70 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+
+extension ViewController : UIPickerViewDataSource {
+    
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView {
+        case bufferMechanismPickerStackCell.pickerView:
+            return bufferMechanisms.count
+        case managingMechanismPickerStackCell.pickerView:
+            return managementMechanisms.count
+        case cachingMechanismPickerStackCell.pickerView:
+            return cachingMechanisms.count
+        case playerMechanismPickerStackCell.pickerView:
+            return playerMechanisms.count
+        default:
+            return 0
+        }
+    }
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+}
+
+
+extension ViewController : UIPickerViewDelegate {
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch pickerView {
+        case bufferMechanismPickerStackCell.pickerView:
+            return bufferMechanisms[row].rawValue
+        case managingMechanismPickerStackCell.pickerView:
+            return managementMechanisms[row].rawValue
+        case cachingMechanismPickerStackCell.pickerView:
+            return cachingMechanisms[row].rawValue
+        case playerMechanismPickerStackCell.pickerView:
+            return playerMechanisms[row].rawValue
+        default:
+            return ""
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch pickerView {
+        case bufferMechanismPickerStackCell.pickerView:
+            selectedBufferMechanism = bufferMechanisms[row]
+            bufferMechanismPickerStackCell.set(title: selectedBufferMechanism.rawValue)
+        case managingMechanismPickerStackCell.pickerView:
+            selectedManagementMechanism = managementMechanisms[row]
+            managingMechanismPickerStackCell.set(title: selectedManagementMechanism.rawValue)
+        case cachingMechanismPickerStackCell.pickerView:
+            selectedCachingMechanism = cachingMechanisms[row]
+            cachingMechanismPickerStackCell.set(title: selectedCachingMechanism.rawValue)
+        case playerMechanismPickerStackCell.pickerView:
+            selectedPlayerMechanism = playerMechanisms[row]
+            playerMechanismPickerStackCell.set(title: selectedPlayerMechanism.rawValue)
+        default:
+            return
+        }
+    }
+    
 }
 

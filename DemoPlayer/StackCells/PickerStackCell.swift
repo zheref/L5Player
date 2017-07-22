@@ -15,6 +15,19 @@ import StackScrollView
 final class PickerStackCell: TapStackCell {
     
     let pickerView = UIPickerView()
+    
+    var datasource: UIPickerViewDataSource! {
+        didSet {
+            pickerView.dataSource = datasource
+        }
+    }
+    
+    var delegate: UIPickerViewDelegate! {
+        didSet {
+            pickerView.delegate = delegate
+        }
+    }
+    
     let titleLabel = UILabel()
     let valueLabel = UILabel()
     var editing: Bool = false
@@ -178,4 +191,4 @@ final class PickerStackCell: TapStackCell {
     func set(title: String) {
         titleLabel.text = title
     }
-} 
+}

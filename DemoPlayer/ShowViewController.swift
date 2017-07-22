@@ -166,19 +166,6 @@ class ShowViewController: UIViewController {
         }
     }
     
-    
-    /// Preloads the first assets
-    ///
-    /// - Parameter then: <#then description#>
-    private func preloadFirstAssets(_ then: () -> Void) {
-        //                for i in 0...products.count-1 {
-        //                    let newPlayerItem = assetsManager.itemReady(forIndex: i)
-        //                    self.playlistItems.append(newPlayerItem)
-        //                    self.player.insert(newPlayerItem, after: nil)
-        //                }
-        //
-    }
-    
     /// Shows poster image if available in the product model and is a valid base 64 image
     fileprivate func setupPoster() {
         guard let currentAsset = currentAsset else {
@@ -195,6 +182,7 @@ class ShowViewController: UIViewController {
     private func showLoadingScreen() {
         leftButton.isUserInteractionEnabled = false
         rightButton.isUserInteractionEnabled = false
+        activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
     
@@ -202,6 +190,7 @@ class ShowViewController: UIViewController {
     fileprivate func hideLoadingScreen() {
         leftButton.isUserInteractionEnabled = true
         rightButton.isUserInteractionEnabled = true
+        activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }
     
