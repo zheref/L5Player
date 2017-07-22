@@ -1,4 +1,14 @@
 //
+//  L5DVPlaylistPlayer.swift
+//  L5Player
+//
+//  Created by Sergio Daniel on 7/22/17.
+//  Copyright © 2017 Li5. All rights reserved.
+//
+
+import Foundation
+
+//
 //  L5QueuePlayer.swift
 //  L5Player
 //
@@ -12,12 +22,12 @@ import AVFoundation
 /// Context for recognizing context where the observer is been invoked from
 private var queuePlayerViewKVOContext = 0
 
-public protocol L5QueuePlayerProtocol : L5PlayerProtocol {
+public protocol L5DVPlaylistPlayerProtocol : L5PlayerProtocol {
     
 }
 
 
-public class L5QueuePlayer : AVQueuePlayer, L5QueuePlayerProtocol {
+public class L5DVPlaylistPlayer : DVPlaylistPlayer, L5DVPlaylistPlayerProtocol {
     
     // MARK: - STORED PROPERTIES
     
@@ -28,7 +38,9 @@ public class L5QueuePlayer : AVQueuePlayer, L5QueuePlayerProtocol {
     private var endPlayObserver: NSObjectProtocol?
     
     /// The instance to the original AVPlayer
-    public var originalPlayer: AVPlayer { return self }
+    public var originalPlayer: AVPlayer {
+        return self.player
+    }
     
     /// The index of the item currently being played
     public var currentIndex: Int = 0
@@ -37,7 +49,7 @@ public class L5QueuePlayer : AVQueuePlayer, L5QueuePlayerProtocol {
     public var automaticallyReplay: Bool = false {
         didSet {
             if automaticallyReplay {
-                actionAtItemEnd = .none
+                /*actionAtItemEnd = .none
                 
                 if endPlayObserver != nil {
                     NotificationCenter.default.removeObserver(endPlayObserver!)
@@ -51,15 +63,14 @@ public class L5QueuePlayer : AVQueuePlayer, L5QueuePlayerProtocol {
                     DispatchQueue.main.async { [weak self] in
                         self?.goToZero()
                     }
-                }
+                }*/
             }
         }
     }
     
     
-    private func goToZero() {
-        self.seek(to: kCMTimeZero)
-        self.currentItem?.seek(to: kCMTimeZero)
+    public func play() {
+        playMedia(at: currentIndex)
     }
     
     
@@ -68,8 +79,7 @@ public class L5QueuePlayer : AVQueuePlayer, L5QueuePlayerProtocol {
             log.error("Trying to go to next player item when there are no more enqueued")
         } else {
             currentIndex += 1
-            pause()
-            advanceToNextItem()
+            next()
             automaticallyReplay = true
         }
     }
@@ -79,53 +89,37 @@ public class L5QueuePlayer : AVQueuePlayer, L5QueuePlayerProtocol {
         if currentIndex == 0 {
             log.error("Trying to go to previous player item when the cursor is on zero position")
         } else {
-            currentIndex -= 1
-            
-            removeAllItems()
-            
-            for index in currentIndex...enqueuedItems.count-1 {
-                let item = enqueuedItems[index]
-                
-                if canInsert(item, after: nil) {
-                    pause()
-                    currentItem?.seek(to: kCMTimeZero)
-                    goToZero()
-                    insert(item, after: nil)
-                } else {
-                    log.warning("Wasn't able to insert av player item while refreshign for specific play")
-                }
-            }
-            
-            if status == .readyToPlay {
-                play()
-                automaticallyReplay = true
-            } else {
-                log.warning("Tried to play but not ready yet for index: \(currentIndex)")
-            }
+            currentIndex += 1
+            previous()
+            automaticallyReplay = true
         }
     }
     
     
-    public override func insert(_ item: AVPlayerItem, after afterItem: AVPlayerItem?) {
+    public func canInsert(_ item: AVPlayerItem, after afterItem: AVPlayerItem?) -> Bool {
+        return true
+    }
+    
+    
+    public func insert(_ item: AVPlayerItem, after afterItem: AVPlayerItem?) {
         enqueuedItems.append(item)
-        super.insert(item, after: afterItem)
     }
     
     
     public func settle() {
-        addObserver(self, forKeyPath: #keyPath(currentItem.status),
+        /*addObserver(self, forKeyPath: #keyPath(currentItem.status),
                     options: [.new, .initial], context: &queuePlayerViewKVOContext)
         addObserver(self, forKeyPath: #keyPath(currentItem),
-                    options: [.new, .initial], context: &queuePlayerViewKVOContext)
+                    options: [.new, .initial], context: &queuePlayerViewKVOContext)*/
     }
     
     
     public func loosen() {
-        removeObserver(self, forKeyPath: #keyPath(currentItem.status),
+        /*removeObserver(self, forKeyPath: #keyPath(currentItem.status),
                        context: &queuePlayerViewKVOContext)
         
         removeObserver(self, forKeyPath: #keyPath(currentItem),
-                       context: &queuePlayerViewKVOContext)
+                       context: &queuePlayerViewKVOContext)*/
     }
     
     
@@ -154,7 +148,6 @@ public class L5QueuePlayer : AVQueuePlayer, L5QueuePlayerProtocol {
                 newStatus = AVPlayerItemStatus(rawValue: newStatusAsNumber.intValue)!
                 
                 if newStatus == .readyToPlay {
-                    goToZero()
                     play()
                 }
             }
@@ -172,5 +165,20 @@ public class L5QueuePlayer : AVQueuePlayer, L5QueuePlayerProtocol {
     private func handleError(with str: String?, error: Error?) {
         log.error(str ?? error?.localizedDescription ?? "Unknown error")
     }
+    
+}
+
+
+extension L5DVPlaylistPlayer : DVPlaylistPlayerDataSource {
+    
+    public func queue(_ queuePlayer: DVPlaylistPlayer!, playerItemAt index: Int) -> AVPlayerItem! {
+        return enqueuedItems[index]
+    }
+    
+    public func numberOfPlayerItems() -> UInt {
+        return UInt(enqueuedItems.count)
+    }
+
+    
     
 }

@@ -21,19 +21,11 @@ public protocol L5PlayerProtocol : class {
     
     var currentIndex: Int { get }
     
-    var currentItem: AVPlayerItem? { get }
-    
-    var status: AVPlayerStatus { get }
-    
     var automaticallyReplay: Bool { get set }
     
     func play()
     
     func pause()
-    
-    func goToZero()
-    
-    func clearItems()
     
     func goNext()
     

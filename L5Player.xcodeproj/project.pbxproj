@@ -43,6 +43,15 @@
 		2BBF22FD1F21A21100A278C3 /* HLSion.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6DBA501F20E983004A68AA /* HLSion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BBF22FF1F22417F00A278C3 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22FE1F22417F00A278C3 /* K.swift */; };
 		2BBF23011F22D33900A278C3 /* L5InstantPreloadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23001F22D33900A278C3 /* L5InstantPreloadingManager.swift */; };
+		2BBF23091F23963600A278C3 /* DVAudioSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBF23031F23963600A278C3 /* DVAudioSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BBF230A1F23963600A278C3 /* DVAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23041F23963600A278C3 /* DVAudioSession.m */; };
+		2BBF230B1F23963600A278C3 /* DVPlaylistPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBF23051F23963600A278C3 /* DVPlaylistPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BBF230C1F23963600A278C3 /* DVPlaylistPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23061F23963600A278C3 /* DVPlaylistPlayer.m */; };
+		2BBF230D1F23963600A278C3 /* DVPlaylistPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBF23071F23963600A278C3 /* DVPlaylistPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BBF230E1F23963600A278C3 /* DVPlaylistPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23081F23963600A278C3 /* DVPlaylistPlayerView.m */; };
+		2BBF23101F2398EF00A278C3 /* L5DVPlaylistPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF230F1F2398EF00A278C3 /* L5DVPlaylistPlayer.swift */; };
+		2BBF23151F23A37600A278C3 /* THObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBF23131F23A37600A278C3 /* THObserver.h */; };
+		2BBF23161F23A37600A278C3 /* THObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23141F23A37600A278C3 /* THObserver.m */; };
 		78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */; };
 		78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C71F1FBC33007EBA17 /* L5Asset.swift */; };
 		78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */; };
@@ -122,6 +131,15 @@
 		2BBF22F51F214A2600A278C3 /* L5QueuePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5QueuePlayer.swift; path = Player/L5QueuePlayer.swift; sourceTree = "<group>"; };
 		2BBF22FE1F22417F00A278C3 /* K.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		2BBF23001F22D33900A278C3 /* L5InstantPreloadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5InstantPreloadingManager.swift; path = PreloadingManagement/L5InstantPreloadingManager.swift; sourceTree = "<group>"; };
+		2BBF23031F23963600A278C3 /* DVAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVAudioSession.h; sourceTree = "<group>"; };
+		2BBF23041F23963600A278C3 /* DVAudioSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVAudioSession.m; sourceTree = "<group>"; };
+		2BBF23051F23963600A278C3 /* DVPlaylistPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVPlaylistPlayer.h; sourceTree = "<group>"; };
+		2BBF23061F23963600A278C3 /* DVPlaylistPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVPlaylistPlayer.m; sourceTree = "<group>"; };
+		2BBF23071F23963600A278C3 /* DVPlaylistPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVPlaylistPlayerView.h; sourceTree = "<group>"; };
+		2BBF23081F23963600A278C3 /* DVPlaylistPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVPlaylistPlayerView.m; sourceTree = "<group>"; };
+		2BBF230F1F2398EF00A278C3 /* L5DVPlaylistPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5DVPlaylistPlayer.swift; path = Player/L5DVPlaylistPlayer.swift; sourceTree = "<group>"; };
+		2BBF23131F23A37600A278C3 /* THObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THObserver.h; sourceTree = "<group>"; };
+		2BBF23141F23A37600A278C3 /* THObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THObserver.m; sourceTree = "<group>"; };
 		78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreloaderProtocol.swift; path = Preloaders/L5PreloaderProtocol.swift; sourceTree = "<group>"; };
 		78B356C71F1FBC33007EBA17 /* L5Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5Asset.swift; sourceTree = "<group>"; };
 		78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PreemptiveBufferPreloader.swift; path = Preloaders/L5PreemptiveBufferPreloader.swift; sourceTree = "<group>"; };
@@ -188,6 +206,7 @@
 		2B0455EE1F1859EC005D8D82 /* L5Player */ = {
 			isa = PBXGroup;
 			children = (
+				2BBF23111F23A36200A278C3 /* Helpers */,
 				2BBF22F21F2148D300A278C3 /* Player */,
 				2BBF22EE1F21453500A278C3 /* Views */,
 				2B6DBA521F20ED3A004A68AA /* Mock */,
@@ -263,8 +282,40 @@
 			children = (
 				2BBF22F31F2148FE00A278C3 /* L5PlayerProtocol.swift */,
 				2BBF22F51F214A2600A278C3 /* L5QueuePlayer.swift */,
+				2BBF230F1F2398EF00A278C3 /* L5DVPlaylistPlayer.swift */,
+				2BBF23021F23954200A278C3 /* DVPlaylistPlayer */,
 			);
 			name = Player;
+			sourceTree = "<group>";
+		};
+		2BBF23021F23954200A278C3 /* DVPlaylistPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				2BBF23031F23963600A278C3 /* DVAudioSession.h */,
+				2BBF23041F23963600A278C3 /* DVAudioSession.m */,
+				2BBF23051F23963600A278C3 /* DVPlaylistPlayer.h */,
+				2BBF23061F23963600A278C3 /* DVPlaylistPlayer.m */,
+				2BBF23071F23963600A278C3 /* DVPlaylistPlayerView.h */,
+				2BBF23081F23963600A278C3 /* DVPlaylistPlayerView.m */,
+			);
+			name = DVPlaylistPlayer;
+			sourceTree = "<group>";
+		};
+		2BBF23111F23A36200A278C3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2BBF23121F23A36F00A278C3 /* THObserver */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		2BBF23121F23A36F00A278C3 /* THObserver */ = {
+			isa = PBXGroup;
+			children = (
+				2BBF23131F23A37600A278C3 /* THObserver.h */,
+				2BBF23141F23A37600A278C3 /* THObserver.m */,
+			);
+			name = THObserver;
 			sourceTree = "<group>";
 		};
 		78B356C41F1FBA9A007EBA17 /* Preloaders */ = {
@@ -314,7 +365,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBF23151F23A37600A278C3 /* THObserver.h in Headers */,
+				2BBF230D1F23963600A278C3 /* DVPlaylistPlayerView.h in Headers */,
+				2BBF23091F23963600A278C3 /* DVAudioSession.h in Headers */,
 				2B0455FD1F1859EC005D8D82 /* L5Player.h in Headers */,
+				2BBF230B1F23963600A278C3 /* DVPlaylistPlayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,14 +516,19 @@
 				2BBF22F61F214A2600A278C3 /* L5QueuePlayer.swift in Sources */,
 				78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */,
 				2BBF22F01F21454500A278C3 /* L5PlayerView.swift in Sources */,
+				2BBF230E1F23963600A278C3 /* DVPlaylistPlayerView.m in Sources */,
 				78B356D11F1FCC36007EBA17 /* L5AssetStatus.swift in Sources */,
 				78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */,
+				2BBF23101F2398EF00A278C3 /* L5DVPlaylistPlayer.swift in Sources */,
 				2B6DBA541F20ED60004A68AA /* MockData.swift in Sources */,
 				78B356CF1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift in Sources */,
+				2BBF230C1F23963600A278C3 /* DVPlaylistPlayer.m in Sources */,
 				2BBF22F41F2148FE00A278C3 /* L5PlayerProtocol.swift in Sources */,
 				78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */,
 				2B6DBA4F1F20E850004A68AA /* L5HLSionDownloadPreloader.swift in Sources */,
 				78B356D51F1FED28007EBA17 /* L5CommonPreloadingManager.swift in Sources */,
+				2BBF230A1F23963600A278C3 /* DVAudioSession.m in Sources */,
+				2BBF23161F23A37600A278C3 /* THObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
