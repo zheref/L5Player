@@ -38,6 +38,8 @@ public protocol L5PreloadingManagerDelegate {
     
     var playingIndex: Int { get }
     
+    var player: L5PlayerProtocol! { get }
+    
     func managerIsReadyForPlayback()
     
 }

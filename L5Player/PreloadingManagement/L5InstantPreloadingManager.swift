@@ -122,14 +122,14 @@ public class L5InstantPreloadingManager : L5InstantPreloadingManagerProtocol {
     /// according to the setup configuration.
     /// - Parameter index: The index to be preloaded
     public func preload(index: Int) {
-        let theAsset = assets[index]
+        let asset = assets[index]
         
-        log.debug("Starting preloading: \(index) -> \(theAsset.url.absoluteURL)")
+        log.debug("Starting preloading: \(index) -> \(asset.url.absoluteURL)")
         
-        theAsset.bufferStatus = .buffering
+        asset.bufferStatus = .buffering
         
-        bufferer?.preload(asset: theAsset) { [weak self] (asset, error) in
-            theAsset.bufferStatus = .buffered
+        bufferer?.preload(asset: asset) { [weak self] (asset, error) in
+            asset.bufferStatus = .buffered
             
             guard let this = self else {
                 log.warning("Lost reference of L5PreloadingManager.self")
@@ -140,6 +140,14 @@ public class L5InstantPreloadingManager : L5InstantPreloadingManagerProtocol {
                 self?.preload(index: nextIndexToDownload)
             } else {
                 log.verbose("No index found to continue buffering")
+            }
+        }
+        
+        if let delegate = delegate {
+            let playerItem = AVPlayerItem(asset: asset.media!)
+            
+            if delegate.player.canInsert(playerItem, after: nil) {
+                delegate.player.insert(playerItem, after: nil)
             }
         }
         

@@ -118,10 +118,22 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
         
         log.debug("Starting preloading: \(index) -> \(asset.url.absoluteURL)")
         
+        asset.bufferStatus = .buffering
+        
         bufferer?.preload(asset: asset) { [weak self] (asset, error) in
+            asset.bufferStatus = .buffered
+            
             guard let this = self else {
                 log.warning("Lost reference of L5PreloadingManager.self")
                 return
+            }
+            
+            if let delegate = self?.delegate {
+                let playerItem = AVPlayerItem(asset: asset.media!)
+                
+                if delegate.player.canInsert(playerItem, after: nil) {
+                    delegate.player.insert(playerItem, after: nil)
+                }
             }
             
             if let nextIndexToDownload = this.assets.index(where: { $0.bufferStatus == .notStarted }) {
