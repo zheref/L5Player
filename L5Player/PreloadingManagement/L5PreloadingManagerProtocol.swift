@@ -10,7 +10,7 @@ import Foundation
 
 public enum L5PreloadingManagerOption : String {
     case L5CommonPreloadingManager
-    case L5AdvancedPreloadingManager
+    case L5InstantPreloadingManager
 }
 
 public protocol L5PreloadingManagerProtocol : L5PreloaderDelegate {

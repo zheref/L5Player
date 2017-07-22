@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     
     fileprivate var managementMechanisms: [L5PreloadingManagerOption] = [
         .L5CommonPreloadingManager,
-        .L5AdvancedPreloadingManager
+        .L5InstantPreloadingManager
     ]
     
     fileprivate lazy var managingMechanismPickerStackCell: PickerStackCell = { [unowned self] in
