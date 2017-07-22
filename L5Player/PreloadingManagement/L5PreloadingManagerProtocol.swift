@@ -36,14 +36,6 @@ public protocol L5PreloadingManagerDelegate {
     
     var playingIndex: Int { get }
     
-    func requiredAssetIsBuffering(_ asset: L5Asset)
-    
-    func requiredAssetIsReady(_ asset: L5Asset)
-    
-    func requiredAssetIsDownloaded(_ asset: L5Asset)
-    
-    func managerDidFinishBufferingMinimumRequiredAssets()
-    
-    func managerDidFinishDownloadingRequiredAssets()
+    func managerIsReadyForPlayback()
     
 }

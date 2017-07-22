@@ -123,23 +123,18 @@ public class L5InstantPreloadingManager : L5InstantPreloadingManagerProtocol {
                 return
             }
             
-            self?.delegate?.requiredAssetIsReady(asset)
-            
             if let nextIndexToDownload = this.assets.index(where: { $0.bufferStatus == .notStarted }) {
                 self?.preload(index: nextIndexToDownload)
             } else {
                 log.verbose("No index found to continue buffering")
             }
-            
-            let alreadyBufferedAssets = this.assets.filter { $0.bufferStatus == .buffered }
-            
-            if this.isEnough(bufferedAssetsAmount: alreadyBufferedAssets.count) {
-                
-                self?.delegate?.managerDidFinishBufferingMinimumRequiredAssets()
-            }
         }
         
-        delegate?.requiredAssetIsBuffering(asset)
+        let alreadyBufferingAssets = assets.filter { $0.bufferStatus == .buffering }
+        
+        if isEnough(bufferedAssetsAmount: alreadyBufferingAssets.count) {
+            delegate?.managerIsReadyForPlayback()
+        }
     }
     
     /// Determines whether the given amount of buffered assets is enough to satisfy the setup
