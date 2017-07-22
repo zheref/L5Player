@@ -17,6 +17,6 @@ FOUNDATION_EXPORT const unsigned char L5PlayerVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <L5Player/PublicHeader.h>
 
 
-#import <DVPlaylistPlayer.h>
-#import <DVAudioSession.h>
-#import <DVPlaylistPlayerView.h>
+#import "DVPlaylistPlayer.h"
+#import "DVAudioSession.h"
+#import "DVPlaylistPlayerView.h"

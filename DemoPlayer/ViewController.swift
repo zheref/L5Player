@@ -81,7 +81,7 @@ class ViewController: UIViewController {
     
     fileprivate var playerMechanisms: [L5PlayerOption] = [
         L5PlayerOption.L5QueuePlayer,
-        L5PlayerOption.DVPlaylistPlayer,
+        L5PlayerOption.L5DVPlaylistPlayer,
         L5PlayerOption.L5PlaylistPlayer
     ]
     

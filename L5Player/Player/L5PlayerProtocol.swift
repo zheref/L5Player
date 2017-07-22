@@ -11,7 +11,7 @@ import AVFoundation
 
 public enum L5PlayerOption : String {
     case L5QueuePlayer
-    case DVPlaylistPlayer
+    case L5DVPlaylistPlayer
     case L5PlaylistPlayer
 }
 
