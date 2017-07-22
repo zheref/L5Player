@@ -21,12 +21,14 @@ class ViewController: UIViewController {
     private lazy var sameTimeBufferAmountTextFieldStackCell: TextFieldStackCell = {
         let v = TextFieldStackCell()
         v.set(placeholder: "Videos amount")
+        v.set(value: "1")
         return v
     }()
     
     private lazy var minimumVideosToBufferBeforePlaybackTextFieldStackCell: TextFieldStackCell = {
         let v = TextFieldStackCell()
         v.set(placeholder: "Videos amount")
+        v.set(value: "2")
         return v
     }()
     
