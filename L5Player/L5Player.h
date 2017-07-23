@@ -19,4 +19,3 @@ FOUNDATION_EXPORT const unsigned char L5PlayerVersionString[];
 
 #import "DVPlaylistPlayer.h"
 #import "DVAudioSession.h"
-#import "DVPlaylistPlayerView.h"

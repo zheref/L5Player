@@ -159,6 +159,17 @@ class ViewController: UIViewController {
         
     }
     
+    func playerMechanism() -> L5PlayerProtocol {
+        switch selectedPlayerMechanism {
+        case .L5QueuePlayer:
+            return L5QueuePlayer()
+        case .L5DVPlaylistPlayer:
+            return L5DVPlaylistPlayer()
+        default:
+            return L5QueuePlayer()
+        }
+    }
+    
     // MARK: - LIFECYCLE
 
     override func viewDidLoad() {
@@ -180,7 +191,9 @@ class ViewController: UIViewController {
             let downloader = cachingMechanism(delegate: manager)
             manager.setup(bufferer: bufferer, downloader: downloader)
             
-            vc.setup(player: L5QueuePlayer(),
+            let player = playerMechanism()
+            
+            vc.setup(player: player,
                      manager: manager,
                      bufferer: bufferer,
                      downloader: downloader)

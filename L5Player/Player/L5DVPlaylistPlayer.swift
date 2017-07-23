@@ -107,6 +107,8 @@ public class L5DVPlaylistPlayer : DVPlaylistPlayer, L5DVPlaylistPlayerProtocol {
     
     
     public func settle() {
+        self.dataSource = self
+        
         /*addObserver(self, forKeyPath: #keyPath(currentItem.status),
                     options: [.new, .initial], context: &queuePlayerViewKVOContext)
         addObserver(self, forKeyPath: #keyPath(currentItem),

@@ -47,8 +47,6 @@
 		2BBF230A1F23963600A278C3 /* DVAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23041F23963600A278C3 /* DVAudioSession.m */; };
 		2BBF230B1F23963600A278C3 /* DVPlaylistPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBF23051F23963600A278C3 /* DVPlaylistPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BBF230C1F23963600A278C3 /* DVPlaylistPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23061F23963600A278C3 /* DVPlaylistPlayer.m */; };
-		2BBF230D1F23963600A278C3 /* DVPlaylistPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBF23071F23963600A278C3 /* DVPlaylistPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BBF230E1F23963600A278C3 /* DVPlaylistPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23081F23963600A278C3 /* DVPlaylistPlayerView.m */; };
 		2BBF23101F2398EF00A278C3 /* L5DVPlaylistPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF230F1F2398EF00A278C3 /* L5DVPlaylistPlayer.swift */; };
 		2BBF23151F23A37600A278C3 /* THObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBF23131F23A37600A278C3 /* THObserver.h */; };
 		2BBF23161F23A37600A278C3 /* THObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23141F23A37600A278C3 /* THObserver.m */; };
@@ -135,8 +133,6 @@
 		2BBF23041F23963600A278C3 /* DVAudioSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVAudioSession.m; sourceTree = "<group>"; };
 		2BBF23051F23963600A278C3 /* DVPlaylistPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVPlaylistPlayer.h; sourceTree = "<group>"; };
 		2BBF23061F23963600A278C3 /* DVPlaylistPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVPlaylistPlayer.m; sourceTree = "<group>"; };
-		2BBF23071F23963600A278C3 /* DVPlaylistPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVPlaylistPlayerView.h; sourceTree = "<group>"; };
-		2BBF23081F23963600A278C3 /* DVPlaylistPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVPlaylistPlayerView.m; sourceTree = "<group>"; };
 		2BBF230F1F2398EF00A278C3 /* L5DVPlaylistPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5DVPlaylistPlayer.swift; path = Player/L5DVPlaylistPlayer.swift; sourceTree = "<group>"; };
 		2BBF23131F23A37600A278C3 /* THObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THObserver.h; sourceTree = "<group>"; };
 		2BBF23141F23A37600A278C3 /* THObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THObserver.m; sourceTree = "<group>"; };
@@ -295,8 +291,6 @@
 				2BBF23041F23963600A278C3 /* DVAudioSession.m */,
 				2BBF23051F23963600A278C3 /* DVPlaylistPlayer.h */,
 				2BBF23061F23963600A278C3 /* DVPlaylistPlayer.m */,
-				2BBF23071F23963600A278C3 /* DVPlaylistPlayerView.h */,
-				2BBF23081F23963600A278C3 /* DVPlaylistPlayerView.m */,
 			);
 			name = DVPlaylistPlayer;
 			sourceTree = "<group>";
@@ -366,7 +360,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BBF23151F23A37600A278C3 /* THObserver.h in Headers */,
-				2BBF230D1F23963600A278C3 /* DVPlaylistPlayerView.h in Headers */,
 				2BBF23091F23963600A278C3 /* DVAudioSession.h in Headers */,
 				2B0455FD1F1859EC005D8D82 /* L5Player.h in Headers */,
 				2BBF230B1F23963600A278C3 /* DVPlaylistPlayer.h in Headers */,
@@ -516,7 +509,6 @@
 				2BBF22F61F214A2600A278C3 /* L5QueuePlayer.swift in Sources */,
 				78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */,
 				2BBF22F01F21454500A278C3 /* L5PlayerView.swift in Sources */,
-				2BBF230E1F23963600A278C3 /* DVPlaylistPlayerView.m in Sources */,
 				78B356D11F1FCC36007EBA17 /* L5AssetStatus.swift in Sources */,
 				78B356C81F1FBC33007EBA17 /* L5Asset.swift in Sources */,
 				2BBF23101F2398EF00A278C3 /* L5DVPlaylistPlayer.swift in Sources */,

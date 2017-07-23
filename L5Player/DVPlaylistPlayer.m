@@ -8,8 +8,9 @@
 
 #import "DVPlaylistPlayer.h"
 #import "DVAudioSession.h"
-#import "DVPlaylistPlayerView.h"
 #import "THObserver.h"
+
+#import <L5Player/L5Player-Swift.h>
 
 typedef void (^TimeObserverBlock)(CMTime time);
 
@@ -38,7 +39,7 @@ typedef void (^TimeObserverBlock)(CMTime time);
 
 -(UIView *)playerView {
     if (!_playerView) {
-        _playerView = [[DVPlaylistPlayerView alloc] initWithFrame:CGRectZero];
+        _playerView = [[L5PlayerView alloc] initWithFrame:CGRectZero];
     }
     
     return _playerView;
@@ -145,7 +146,7 @@ typedef void (^TimeObserverBlock)(CMTime time);
                                                                           usingBlock:self.periodicTimeObserverBlock];
     }
 
-    ((DVPlaylistPlayerView *)self.playerView).playerLayer.player = player;
+    ((L5PlayerView *)self.playerView).playerLayer.player = player;
     self.currentItem = playerItem;
     self.player = player;
 }
@@ -198,7 +199,7 @@ typedef void (^TimeObserverBlock)(CMTime time);
     self.playerRateObserver = nil;
     self.playerItemPlaybackLikelyToKeepUpObserver = nil;
     
-    ((DVPlaylistPlayerView *)self.playerView).playerLayer.player = nil;
+    ((L5PlayerView *)self.playerView).playerLayer.player = nil;
     self.player = nil;
     self.currentItem = nil;
     
