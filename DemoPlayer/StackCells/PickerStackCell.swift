@@ -10,8 +10,6 @@ import UIKit
 
 import EasyPeasy
 
-import StackScrollView
-
 final class PickerStackCell: TapStackCell {
     
     let pickerView = UIPickerView()

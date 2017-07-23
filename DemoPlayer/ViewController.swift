@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import StackScrollView
 import L5Player
 
 class ViewController: UIViewController {

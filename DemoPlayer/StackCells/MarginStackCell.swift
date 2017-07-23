@@ -8,8 +8,6 @@
 
 import UIKit
 
-import StackScrollView
-
 final class MarginStackCell: StackCellBase {
     
     let height: CGFloat

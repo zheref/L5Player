@@ -8,8 +8,6 @@
 
 import UIKit
 
-import StackScrollView
-
 class StackCellBase: UIControl, StackCellType {
     
     init() {

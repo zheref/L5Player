@@ -10,8 +10,6 @@ import Foundation
 
 import EasyPeasy
 
-import StackScrollView
-
 final class HeaderStackCell: StackCellBase {
     
     let label = UILabel()

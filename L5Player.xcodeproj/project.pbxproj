@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0231821F24EAA70084D94F /* L5Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0455EC1F1859EC005D8D82 /* L5Player.framework */; };
+		2B02318C1F251F140084D94F /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0231881F251F140084D94F /* StackScrollView.swift */; };
+		2B02318D1F251F140084D94F /* StackCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0231891F251F140084D94F /* StackCellType.swift */; };
+		2B02318E1F251F140084D94F /* StackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02318A1F251F140084D94F /* StackCell.swift */; };
+		2B02318F1F251F140084D94F /* NibLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02318B1F251F140084D94F /* NibLoader.swift */; };
 		2B0455F61F1859EC005D8D82 /* L5Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0455EC1F1859EC005D8D82 /* L5Player.framework */; };
 		2B0455FB1F1859EC005D8D82 /* L5PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0455FA1F1859EC005D8D82 /* L5PlayerTests.swift */; };
 		2B0455FD1F1859EC005D8D82 /* L5Player.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B0455EF1F1859EC005D8D82 /* L5Player.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,7 +24,6 @@
 		2B6DBA4F1F20E850004A68AA /* L5HLSionDownloadPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA4E1F20E850004A68AA /* L5HLSionDownloadPreloader.swift */; };
 		2B6DBA511F20E983004A68AA /* HLSion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6DBA501F20E983004A68AA /* HLSion.framework */; };
 		2B6DBA541F20ED60004A68AA /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA531F20ED60004A68AA /* MockData.swift */; };
-		2B6DBA561F20F190004A68AA /* StackScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6DBA551F20F190004A68AA /* StackScrollView.framework */; };
 		2B6DBA591F20F37A004A68AA /* PickerStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA581F20F37A004A68AA /* PickerStackCell.swift */; };
 		2B6DBA5B1F20F3B2004A68AA /* TextFieldStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA5A1F20F3B2004A68AA /* TextFieldStackCell.swift */; };
 		2B6DBA5D1F20F470004A68AA /* SwitchStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA5C1F20F470004A68AA /* SwitchStackCell.swift */; };
@@ -27,19 +31,16 @@
 		2B6DBA611F211D2A004A68AA /* HeaderStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA601F211D2A004A68AA /* HeaderStackCell.swift */; };
 		2B6DBA631F211DE6004A68AA /* ButtonStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA621F211DE6004A68AA /* ButtonStackCell.swift */; };
 		2B6DBA651F21223A004A68AA /* EasyPeasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6DBA641F21223A004A68AA /* EasyPeasy.framework */; };
-		2B6DBA661F2123F1004A68AA /* StackScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6DBA551F20F190004A68AA /* StackScrollView.framework */; };
 		2B6DBA681F212466004A68AA /* TapStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA671F212466004A68AA /* TapStackCell.swift */; };
 		2B6DBA6A1F212591004A68AA /* StackCellBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA691F212591004A68AA /* StackCellBase.swift */; };
 		2B6DBA6C1F2125F2004A68AA /* MarginStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6DBA6B1F2125F2004A68AA /* MarginStackCell.swift */; };
 		2BBF22EC1F21444A00A278C3 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22EB1F21444A00A278C3 /* ShowViewController.swift */; };
 		2BBF22F01F21454500A278C3 /* L5PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22EF1F21454500A278C3 /* L5PlayerView.swift */; };
-		2BBF22F11F21459E00A278C3 /* L5Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0455EC1F1859EC005D8D82 /* L5Player.framework */; };
 		2BBF22F41F2148FE00A278C3 /* L5PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22F31F2148FE00A278C3 /* L5PlayerProtocol.swift */; };
 		2BBF22F61F214A2600A278C3 /* L5QueuePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22F51F214A2600A278C3 /* L5QueuePlayer.swift */; };
 		2BBF22F81F2166CF00A278C3 /* EasyPeasy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6DBA641F21223A004A68AA /* EasyPeasy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BBF22F91F2167B700A278C3 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */; };
 		2BBF22FA1F2167B700A278C3 /* SwiftyBeaver.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2BBF22FB1F21A1D400A278C3 /* StackScrollView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6DBA551F20F190004A68AA /* StackScrollView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BBF22FD1F21A21100A278C3 /* HLSion.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6DBA501F20E983004A68AA /* HLSion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BBF22FF1F22417F00A278C3 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF22FE1F22417F00A278C3 /* K.swift */; };
 		2BBF23011F22D33900A278C3 /* L5InstantPreloadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF23001F22D33900A278C3 /* L5InstantPreloadingManager.swift */; };
@@ -76,7 +77,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2BBF22FB1F21A1D400A278C3 /* StackScrollView.framework in CopyFiles */,
 				2BBF22F81F2166CF00A278C3 /* EasyPeasy.framework in CopyFiles */,
 				2BBF22FA1F2167B700A278C3 /* SwiftyBeaver.framework in CopyFiles */,
 			);
@@ -95,6 +95,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B0231881F251F140084D94F /* StackScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackScrollView.swift; sourceTree = "<group>"; };
+		2B0231891F251F140084D94F /* StackCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackCellType.swift; sourceTree = "<group>"; };
+		2B02318A1F251F140084D94F /* StackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackCell.swift; sourceTree = "<group>"; };
+		2B02318B1F251F140084D94F /* NibLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoader.swift; sourceTree = "<group>"; };
 		2B0455EC1F1859EC005D8D82 /* L5Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = L5Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0455EF1F1859EC005D8D82 /* L5Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = L5Player.h; sourceTree = "<group>"; };
 		2B0455F01F1859EC005D8D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,7 +116,6 @@
 		2B6DBA4E1F20E850004A68AA /* L5HLSionDownloadPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5HLSionDownloadPreloader.swift; path = Preloaders/L5HLSionDownloadPreloader.swift; sourceTree = "<group>"; };
 		2B6DBA501F20E983004A68AA /* HLSion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HLSion.framework; path = Carthage/Build/iOS/HLSion.framework; sourceTree = "<group>"; };
 		2B6DBA531F20ED60004A68AA /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockData.swift; path = Mock/MockData.swift; sourceTree = "<group>"; };
-		2B6DBA551F20F190004A68AA /* StackScrollView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StackScrollView.framework; sourceTree = "<group>"; };
 		2B6DBA581F20F37A004A68AA /* PickerStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerStackCell.swift; path = StackCells/PickerStackCell.swift; sourceTree = "<group>"; };
 		2B6DBA5A1F20F3B2004A68AA /* TextFieldStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldStackCell.swift; path = StackCells/TextFieldStackCell.swift; sourceTree = "<group>"; };
 		2B6DBA5C1F20F470004A68AA /* SwitchStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchStackCell.swift; path = StackCells/SwitchStackCell.swift; sourceTree = "<group>"; };
@@ -152,7 +155,6 @@
 			files = (
 				78B356CD1F1FCB76007EBA17 /* SwiftyBeaver.framework in Frameworks */,
 				2B6DBA511F20E983004A68AA /* HLSion.framework in Frameworks */,
-				2B6DBA561F20F190004A68AA /* StackScrollView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,16 +170,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B0231821F24EAA70084D94F /* L5Player.framework in Frameworks */,
 				2BBF22F91F2167B700A278C3 /* SwiftyBeaver.framework in Frameworks */,
-				2BBF22F11F21459E00A278C3 /* L5Player.framework in Frameworks */,
 				2B6DBA651F21223A004A68AA /* EasyPeasy.framework in Frameworks */,
-				2B6DBA661F2123F1004A68AA /* StackScrollView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0231871F251EBF0084D94F /* StackScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				2B0231881F251F140084D94F /* StackScrollView.swift */,
+				2B0231891F251F140084D94F /* StackCellType.swift */,
+				2B02318A1F251F140084D94F /* StackCell.swift */,
+				2B02318B1F251F140084D94F /* NibLoader.swift */,
+			);
+			name = StackScrollView;
+			sourceTree = "<group>";
+		};
 		2B0455E21F1859EC005D8D82 = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +240,7 @@
 		2B04560B1F185A35005D8D82 /* DemoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				2B0231871F251EBF0084D94F /* StackScrollView */,
 				2B6DBA571F20F34F004A68AA /* StackCells */,
 				2BBF22FE1F22417F00A278C3 /* K.swift */,
 				2B04560C1F185A35005D8D82 /* AppDelegate.swift */,
@@ -326,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				2B6DBA641F21223A004A68AA /* EasyPeasy.framework */,
-				2B6DBA551F20F190004A68AA /* StackScrollView.framework */,
 				2B6DBA501F20E983004A68AA /* HLSion.framework */,
 				78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */,
 			);
@@ -536,16 +548,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B02318E1F251F140084D94F /* StackCell.swift in Sources */,
 				2B6DBA591F20F37A004A68AA /* PickerStackCell.swift in Sources */,
 				2B04560F1F185A35005D8D82 /* ViewController.swift in Sources */,
 				2B6DBA631F211DE6004A68AA /* ButtonStackCell.swift in Sources */,
 				2B6DBA6A1F212591004A68AA /* StackCellBase.swift in Sources */,
 				2B6DBA5F1F211AC9004A68AA /* SeparatorStackCell.swift in Sources */,
+				2B02318F1F251F140084D94F /* NibLoader.swift in Sources */,
+				2B02318D1F251F140084D94F /* StackCellType.swift in Sources */,
 				2BBF22FF1F22417F00A278C3 /* K.swift in Sources */,
 				2B6DBA6C1F2125F2004A68AA /* MarginStackCell.swift in Sources */,
 				2B6DBA5D1F20F470004A68AA /* SwitchStackCell.swift in Sources */,
 				2B6DBA5B1F20F3B2004A68AA /* TextFieldStackCell.swift in Sources */,
 				2B04560D1F185A35005D8D82 /* AppDelegate.swift in Sources */,
+				2B02318C1F251F140084D94F /* StackScrollView.swift in Sources */,
 				2B6DBA681F212466004A68AA /* TapStackCell.swift in Sources */,
 				2B6DBA611F211D2A004A68AA /* HeaderStackCell.swift in Sources */,
 				2BBF22EC1F21444A00A278C3 /* ShowViewController.swift in Sources */,
