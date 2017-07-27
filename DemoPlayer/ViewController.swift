@@ -61,9 +61,10 @@ class ViewController: UIViewController {
         return v
     }()
     
-    fileprivate var selectedCachingMechanism: L5DownloadPreloaderOption = .L5AssetDownloadTaskPreloader
+    fileprivate var selectedCachingMechanism: L5DownloadPreloaderOption = .None
     
     fileprivate var cachingMechanisms: [L5DownloadPreloaderOption] = [
+        .None,
         .L5AssetDownloadTaskPreloader,
         .L5HLSionDownloadPreloader
     ]
@@ -136,8 +137,15 @@ class ViewController: UIViewController {
     }
     
     /// Returns the mechanism for caching specified by the user by using the corresponding buffer
-    func cachingMechanism(delegate: L5PreloaderDelegate) -> L5DownloadPreloaderProtocol {
-        return L5HLSionDownloadPreloader(delegate: delegate)
+    func cachingMechanism(delegate: L5PreloaderDelegate) -> L5DownloadPreloaderProtocol? {
+        switch selectedCachingMechanism {
+        case .None:
+            return nil
+        case .L5AssetDownloadTaskPreloader:
+            return nil
+        case .L5HLSionDownloadPreloader:
+            return L5HLSionDownloadPreloader(delegate: delegate)
+        }
     }
     
     func managementMechanism(assets: [L5Asset],

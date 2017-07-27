@@ -33,6 +33,7 @@ public protocol L5BufferPreloaderProtocol : L5PreloaderProtocol {
 }
 
 public enum L5DownloadPreloaderOption : String {
+    case None
     case L5AssetDownloadTaskPreloader
     case L5HLSionDownloadPreloader
 }

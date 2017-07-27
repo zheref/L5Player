@@ -12,6 +12,8 @@
 		2B02318D1F251F140084D94F /* StackCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0231891F251F140084D94F /* StackCellType.swift */; };
 		2B02318E1F251F140084D94F /* StackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02318A1F251F140084D94F /* StackCell.swift */; };
 		2B02318F1F251F140084D94F /* NibLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02318B1F251F140084D94F /* NibLoader.swift */; };
+		2B0231931F2521010084D94F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0231911F2521010084D94F /* Fabric.framework */; };
+		2B0231941F2521010084D94F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0231921F2521010084D94F /* Crashlytics.framework */; };
 		2B0455F61F1859EC005D8D82 /* L5Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0455EC1F1859EC005D8D82 /* L5Player.framework */; };
 		2B0455FB1F1859EC005D8D82 /* L5PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0455FA1F1859EC005D8D82 /* L5PlayerTests.swift */; };
 		2B0455FD1F1859EC005D8D82 /* L5Player.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B0455EF1F1859EC005D8D82 /* L5Player.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -99,6 +101,8 @@
 		2B0231891F251F140084D94F /* StackCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackCellType.swift; sourceTree = "<group>"; };
 		2B02318A1F251F140084D94F /* StackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackCell.swift; sourceTree = "<group>"; };
 		2B02318B1F251F140084D94F /* NibLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoader.swift; sourceTree = "<group>"; };
+		2B0231911F2521010084D94F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		2B0231921F2521010084D94F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2B0455EC1F1859EC005D8D82 /* L5Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = L5Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0455EF1F1859EC005D8D82 /* L5Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = L5Player.h; sourceTree = "<group>"; };
 		2B0455F01F1859EC005D8D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,8 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B0231821F24EAA70084D94F /* L5Player.framework in Frameworks */,
+				2B0231941F2521010084D94F /* Crashlytics.framework in Frameworks */,
 				2BBF22F91F2167B700A278C3 /* SwiftyBeaver.framework in Frameworks */,
 				2B6DBA651F21223A004A68AA /* EasyPeasy.framework in Frameworks */,
+				2B0231931F2521010084D94F /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +344,8 @@
 		78B356CB1F1FCB3B007EBA17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B0231911F2521010084D94F /* Fabric.framework */,
+				2B0231921F2521010084D94F /* Crashlytics.framework */,
 				2B6DBA641F21223A004A68AA /* EasyPeasy.framework */,
 				2B6DBA501F20E983004A68AA /* HLSion.framework */,
 				78B356CC1F1FCB76007EBA17 /* SwiftyBeaver.framework */,
@@ -426,6 +434,7 @@
 				2B0456071F185A35005D8D82 /* Frameworks */,
 				2B0456081F185A35005D8D82 /* Resources */,
 				2BBF22F71F2166C300A278C3 /* CopyFiles */,
+				2B0231901F2520E50084D94F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -510,6 +519,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B0231901F2520E50084D94F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 5fc65ced6ab2d25990ed5d5ce0fc5902cadfde38 ed55027d5b51ac3a58762ae2626bc46e2f1eef77e6e84d9922c2fbe7e9c3c5e8";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B0455E71F1859EC005D8D82 /* Sources */ = {
@@ -794,8 +819,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.li5.li5player.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "56f6e6a0-5968-4652-95c1-b9e56fe2d452";
-				PROVISIONING_PROFILE_SPECIFIER = "Li5 Player Dev Profile";
+				PROVISIONING_PROFILE = "fe2d00e8-11d2-4684-ad63-1e7599709f01";
+				PROVISIONING_PROFILE_SPECIFIER = "Dev Li5 Player";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;

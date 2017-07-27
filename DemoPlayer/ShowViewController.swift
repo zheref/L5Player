@@ -47,7 +47,7 @@ class ShowViewController: UIViewController {
     internal func setup(player: L5PlayerProtocol,
                         manager: L5PreloadingManagerProtocol,
                         bufferer: L5BufferPreloaderProtocol,
-                        downloader: L5DownloadPreloaderProtocol) {
+                        downloader: L5DownloadPreloaderProtocol?) {
         
         self.player = player
         
