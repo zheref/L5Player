@@ -105,17 +105,6 @@ public class L5InstantPreloadingManager : L5InstantPreloadingManagerProtocol {
         }
     }
     
-    /// Returns an AVPlayerItem ready with the already downloaded or pending to download asset
-    /// - Parameter index: Required index
-    /// - Returns: AVPlayerItem with its corresponding asset attached
-    func itemReady(forIndex index: Int) -> AVPlayerItem? {
-        if let media = assets[index].media {
-            return AVPlayerItem(asset: media)
-        } else {
-            return nil
-        }
-    }
-    
     // MARK: Private Operations
     
     /// Preload the video corresponding to the given index by buffering and/or downloading
@@ -144,11 +133,7 @@ public class L5InstantPreloadingManager : L5InstantPreloadingManagerProtocol {
         }
         
         if let delegate = delegate {
-            let playerItem = AVPlayerItem(asset: asset.media!)
-            
-            if delegate.player.canInsert(playerItem, after: nil) {
-                delegate.player.insert(playerItem, after: nil)
-            }
+            delegate.player.append(asset: asset)
         }
         
         let alreadyBufferingAssets = assets.filter {

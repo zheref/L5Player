@@ -36,6 +36,7 @@ public enum L5DownloadPreloaderOption : String {
     case None
     case L5AssetDownloadTaskPreloader
     case L5HLSionDownloadPreloader
+    case L5PlayerDownloadPreloader
 }
 
 /// Specialization of L5PreloaderProtocol focused on downloading purposes meaning caching

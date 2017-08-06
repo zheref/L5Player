@@ -38,7 +38,7 @@ public class L5DVPlaylistPlayer : DVPlaylistPlayer, L5DVPlaylistPlayerProtocol {
     private var endPlayObserver: NSObjectProtocol?
     
     /// The instance to the original AVPlayer
-    public var originalPlayer: AVPlayer {
+    public var currentPlayer: AVPlayer? {
         return self.player
     }
     
@@ -89,13 +89,17 @@ public class L5DVPlaylistPlayer : DVPlaylistPlayer, L5DVPlaylistPlayerProtocol {
         if currentIndex == 0 {
             log.error("Trying to go to previous player item when the cursor is on zero position")
         } else {
-            currentIndex += 1
+            currentIndex -= 1
             previous()
             automaticallyReplay = true
         }
     }
     
-    
+    public func append(asset: L5Asset) {
+        if let playerItem = asset.playerItem {
+            enqueuedItems.append(playerItem)
+        }
+    }
     public func canInsert(_ item: AVPlayerItem, after afterItem: AVPlayerItem?) -> Bool {
         return true
     }

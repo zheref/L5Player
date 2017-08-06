@@ -66,7 +66,8 @@ class ViewController: UIViewController {
     fileprivate var cachingMechanisms: [L5DownloadPreloaderOption] = [
         .None,
         .L5AssetDownloadTaskPreloader,
-        .L5HLSionDownloadPreloader
+        .L5HLSionDownloadPreloader,
+        .L5PlayerDownloadPreloader
     ]
     
     fileprivate lazy var cachingMechanismPickerStackCell: PickerStackCell = { [unowned self] in
@@ -82,7 +83,8 @@ class ViewController: UIViewController {
     fileprivate var playerMechanisms: [L5PlayerOption] = [
         L5PlayerOption.L5QueuePlayer,
         L5PlayerOption.L5DVPlaylistPlayer,
-        L5PlayerOption.L5PlaylistPlayer
+        L5PlayerOption.L5PlaylistPlayer,
+        L5PlayerOption.L5MultiPlayer,
     ]
     
     fileprivate lazy var playerMechanismPickerStackCell: PickerStackCell = { [unowned self] in
@@ -145,6 +147,8 @@ class ViewController: UIViewController {
             return nil
         case .L5HLSionDownloadPreloader:
             return L5HLSionDownloadPreloader(delegate: delegate)
+        case .L5PlayerDownloadPreloader:
+            return L5PlayerPreloader(delegate: delegate)
         }
     }
     
@@ -170,10 +174,10 @@ class ViewController: UIViewController {
         switch selectedPlayerMechanism {
         case .L5QueuePlayer:
             return L5QueuePlayer()
-        case .L5DVPlaylistPlayer:
+        case .L5DVPlaylistPlayer, .L5PlaylistPlayer:
             return L5DVPlaylistPlayer()
-        default:
-            return L5QueuePlayer()
+        case .L5MultiPlayer:
+            return L5MultiPlayer()
         }
     }
     

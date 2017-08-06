@@ -33,6 +33,23 @@ public class L5Asset {
     
     /// The AVAsset representing the actual in-memory asset with its seconds and its metadata.
     public var media: AVAsset?
+    internal var player: AVPlayer?
+    internal var playerItem: AVPlayerItem? {
+        get {
+            if let item = _playerItem {
+                return item
+            }
+            if let asset = media {
+                return AVPlayerItem(asset: asset)
+            }
+            return nil
+        }
+        set {
+            _playerItem = newValue
+        }
+    }
+
+    private var _playerItem: AVPlayerItem?
     
     // MARK: - INITIALIZERS
     

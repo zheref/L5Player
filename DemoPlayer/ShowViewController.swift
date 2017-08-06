@@ -66,8 +66,10 @@ class ShowViewController: UIViewController {
         super.viewWillAppear(animated)
         
         player.settle()
-        
-        playerView.playerLayer.player = player.originalPlayer
+
+        if let currentPlayer = player.currentPlayer {
+            playerView.playerLayer.player = currentPlayer
+        }
         
         manager.delegate = self
         
@@ -93,6 +95,13 @@ class ShowViewController: UIViewController {
         
         player.play()
         player.automaticallyReplay = true
+        updatePlayerLayer()
+    }
+
+    func updatePlayerLayer() {
+        if let currentPlayer = player.currentPlayer {
+            playerView.playerLayer.player = currentPlayer
+        }
     }
     
     
@@ -133,10 +142,12 @@ class ShowViewController: UIViewController {
     
     @IBAction func userDidTapLeftActiveSection(_ sender: Any) {
         player.goPrevious()
+        updatePlayerLayer()
     }
     
     @IBAction func userDidTapRightActiveSection(_ sender: Any) {
         player.goNext()
+        updatePlayerLayer()
     }
     
     
@@ -149,6 +160,7 @@ extension ShowViewController : L5PreloadingManagerDelegate {
             log.debug("Finished buffering minimum required assets!!!")
             self.hideLoadingScreen()
             self.player.play()
+            self.updatePlayerLayer()
         }
     }
     

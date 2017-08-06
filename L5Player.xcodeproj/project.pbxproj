@@ -60,6 +60,8 @@
 		78B356CF1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356CE1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift */; };
 		78B356D11F1FCC36007EBA17 /* L5AssetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356D01F1FCC36007EBA17 /* L5AssetStatus.swift */; };
 		78B356D51F1FED28007EBA17 /* L5CommonPreloadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B356D41F1FED28007EBA17 /* L5CommonPreloadingManager.swift */; };
+		B6F469DA1F3629FB00154B96 /* L5PlayerPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F469D91F3629FB00154B96 /* L5PlayerPreloader.swift */; };
+		B6F469DC1F37118F00154B96 /* L5MultiPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F469DB1F37118F00154B96 /* L5MultiPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +152,8 @@
 		78B356CE1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5PlayerBootstrap.swift; sourceTree = "<group>"; };
 		78B356D01F1FCC36007EBA17 /* L5AssetStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5AssetStatus.swift; sourceTree = "<group>"; };
 		78B356D41F1FED28007EBA17 /* L5CommonPreloadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5CommonPreloadingManager.swift; path = PreloadingManagement/L5CommonPreloadingManager.swift; sourceTree = "<group>"; };
+		B6F469D91F3629FB00154B96 /* L5PlayerPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L5PlayerPreloader.swift; path = Preloaders/L5PlayerPreloader.swift; sourceTree = "<group>"; };
+		B6F469DB1F37118F00154B96 /* L5MultiPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L5MultiPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +303,7 @@
 				2BBF22F51F214A2600A278C3 /* L5QueuePlayer.swift */,
 				2BBF230F1F2398EF00A278C3 /* L5DVPlaylistPlayer.swift */,
 				2BBF23021F23954200A278C3 /* DVPlaylistPlayer */,
+				B6F469DB1F37118F00154B96 /* L5MultiPlayer.swift */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				78B356C51F1FBACD007EBA17 /* L5PreloaderProtocol.swift */,
 				78B356C91F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift */,
 				2B6DBA4E1F20E850004A68AA /* L5HLSionDownloadPreloader.swift */,
+				B6F469D91F3629FB00154B96 /* L5PlayerPreloader.swift */,
 			);
 			name = Preloaders;
 			sourceTree = "<group>";
@@ -543,6 +549,7 @@
 			files = (
 				2BBF23011F22D33900A278C3 /* L5InstantPreloadingManager.swift in Sources */,
 				2B6DBA4D1F204588004A68AA /* L5PreloadingManagerProtocol.swift in Sources */,
+				B6F469DA1F3629FB00154B96 /* L5PlayerPreloader.swift in Sources */,
 				2BBF22F61F214A2600A278C3 /* L5QueuePlayer.swift in Sources */,
 				78B356C61F1FBACD007EBA17 /* L5PreloaderProtocol.swift in Sources */,
 				2BBF22F01F21454500A278C3 /* L5PlayerView.swift in Sources */,
@@ -553,6 +560,7 @@
 				78B356CF1F1FCBB3007EBA17 /* L5PlayerBootstrap.swift in Sources */,
 				2BBF230C1F23963600A278C3 /* DVPlaylistPlayer.m in Sources */,
 				2BBF22F41F2148FE00A278C3 /* L5PlayerProtocol.swift in Sources */,
+				B6F469DC1F37118F00154B96 /* L5MultiPlayer.swift in Sources */,
 				78B356CA1F1FBDEB007EBA17 /* L5PreemptiveBufferPreloader.swift in Sources */,
 				2B6DBA4F1F20E850004A68AA /* L5HLSionDownloadPreloader.swift in Sources */,
 				78B356D51F1FED28007EBA17 /* L5CommonPreloadingManager.swift in Sources */,

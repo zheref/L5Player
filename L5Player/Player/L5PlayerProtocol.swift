@@ -13,11 +13,12 @@ public enum L5PlayerOption : String {
     case L5QueuePlayer
     case L5DVPlaylistPlayer
     case L5PlaylistPlayer
+    case L5MultiPlayer
 }
 
 public protocol L5PlayerProtocol : class {
     
-    var originalPlayer: AVPlayer { get }
+    var currentPlayer: AVPlayer? { get }
     
     var currentIndex: Int { get }
     
@@ -30,10 +31,8 @@ public protocol L5PlayerProtocol : class {
     func goNext()
     
     func goPrevious()
-    
-    func insert(_ item: AVPlayerItem, after afterItem: AVPlayerItem?)
-    
-    func canInsert(_ item: AVPlayerItem, after afterItem: AVPlayerItem?) -> Bool
+
+    func append(asset: L5Asset)
     
     func settle()
     

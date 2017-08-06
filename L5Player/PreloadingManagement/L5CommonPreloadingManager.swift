@@ -97,17 +97,6 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
         }
     }
     
-    /// Returns an AVPlayerItem ready with the already downloaded or pending to download asset
-    /// - Parameter index: Required index
-    /// - Returns: AVPlayerItem with its corresponding asset attached
-    func itemReady(forIndex index: Int) -> AVPlayerItem? {
-        if let media = assets[index].media {
-            return AVPlayerItem(asset: media)
-        } else {
-            return nil
-        }
-    }
-    
     // MARK: Private Operations
     
     /// Preload the video corresponding to the given index by buffering and/or downloading
@@ -120,32 +109,28 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
         
         asset.bufferStatus = .buffering
         
-        bufferer?.preload(asset: asset) { [weak self] (asset, error) in
+        downloader?.preload(asset: asset) { [weak self] (asset, error) in
             asset.bufferStatus = .buffered
             
-            guard let this = self else {
+            guard let `self` = self else {
                 log.warning("Lost reference of L5PreloadingManager.self")
                 return
             }
             
-            if let delegate = self?.delegate {
-                let playerItem = AVPlayerItem(asset: asset.media!)
-                
-                if delegate.player.canInsert(playerItem, after: nil) {
-                    delegate.player.insert(playerItem, after: nil)
-                }
+            if let delegate = self.delegate {
+                delegate.player.append(asset: asset)
             }
             
-            if let nextIndexToDownload = this.assets.index(where: { $0.bufferStatus == .notStarted }) {
-                self?.preload(index: nextIndexToDownload)
+            if let nextIndexToDownload = self.assets.index(where: { $0.bufferStatus == .notStarted }) {
+                self.preload(index: nextIndexToDownload)
             } else {
                 log.verbose("No index found to continue buffering")
             }
             
-            let alreadyBufferedAssets = this.assets.filter { $0.bufferStatus == .buffered }
+            let alreadyBufferedAssets = self.assets.filter { $0.bufferStatus == .buffered }
             
-            if this.isEnough(bufferedAssetsAmount: alreadyBufferedAssets.count) {
-                self?.delegate?.managerIsReadyForPlayback()
+            if self.isEnough(bufferedAssetsAmount: alreadyBufferedAssets.count) {
+                self.delegate?.managerIsReadyForPlayback()
             }
         }
     }
