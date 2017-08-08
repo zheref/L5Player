@@ -99,6 +99,7 @@ public class L5PlayerPreloader: NSObject, L5PlayerPreloaderProtocol {
                 knownAsset.playerItem = playerItem
                 knownAsset.player = player
                 preloadCompletion(knownAsset, nil)
+                playerItem.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), context: &L5PlayerPreloader.playerItemContext)
             case .failed:
                 print("The item failed to load!")
                 preloadCompletion(knownAsset, playerItem.error)
