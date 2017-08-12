@@ -50,11 +50,7 @@ public class L5MultiPlayer: NSObject, L5MultiPlayerProtocol {
     }
 
     public var currentItem: AVPlayerItem? {
-        if enqueuedItems.count > currentIndex {
-            return enqueuedItems[currentIndex].playerItem
-        }
-
-        return nil
+        return currentAsset?.playerItem
     }
 
     public func append(asset: L5Asset) {
@@ -64,23 +60,22 @@ public class L5MultiPlayer: NSObject, L5MultiPlayerProtocol {
     /// Whether the current item should be played all over again once it ends
     public var automaticallyReplay: Bool = false {
         didSet {
-//            if automaticallyReplay {
-//                actionAtItemEnd = .none
-//
-//                if endPlayObserver != nil {
-//                    NotificationCenter.default.removeObserver(endPlayObserver!)
-//                    endPlayObserver = nil
-//                }
-//
-//                endPlayObserver = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
-//                                                                         object: currentItem,
-//                                                                         queue: nil)
-//                { [weak self] _ in
-//                    DispatchQueue.main.async { [weak self] in
-//                        self?.goToZero()
-//                    }
-//                }
-//            }
+            if automaticallyReplay {
+                currentPlayer?.actionAtItemEnd = .none
+
+                if let observer = endPlayObserver {
+                    NotificationCenter.default.removeObserver(observer)
+                    endPlayObserver = nil
+                }
+
+                endPlayObserver = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
+                                                                         object: currentItem,
+                                                                         queue: OperationQueue.main)
+                { [weak self] _ in
+                    self?.goToZero()
+                    self?.play()
+                }
+            }
         }
     }
 
@@ -96,19 +91,17 @@ public class L5MultiPlayer: NSObject, L5MultiPlayerProtocol {
             log.error("Trying to go to next player item when there are no more enqueued")
         } else {
             pause()
+            let lastItem = currentItem
             currentIndex += 1
             currentItem?.seek(to: kCMTimeZero)
             play()
+            lastItem?.seek(to: kCMTimeZero)
             automaticallyReplay = true
         }
     }
 
     public var status: AVPlayerStatus {
-        if let currentPlayer = currentPlayer {
-            return currentPlayer.status
-        }
-
-        return .unknown
+        return currentPlayer?.status ?? .unknown
     }
 
     public func goPrevious() {
