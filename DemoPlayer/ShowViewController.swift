@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import L5Player
 
-class ShowViewController: UIViewController {
+class ShowViewController: UIViewController, L5MultiPlayerDelegate {
     
     // MARK: - PROPERTIES
     
@@ -64,6 +64,10 @@ class ShowViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        if let multiPlayer = player as? L5MultiPlayer {
+            multiPlayer.delegate = self
+        }
         
         player.settle()
 
@@ -95,16 +99,12 @@ class ShowViewController: UIViewController {
         
         player.play()
         player.automaticallyReplay = true
-        updatePlayerLayer()
     }
 
-    func updatePlayerLayer() {
-        if let currentPlayer = player.currentPlayer {
-            playerView.playerLayer.player = currentPlayer
-        }
+    func didChange(player: AVPlayer?) {
+        playerView.playerLayer.player = player
     }
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -142,12 +142,10 @@ class ShowViewController: UIViewController {
     
     @IBAction func userDidTapLeftActiveSection(_ sender: Any) {
         player.goPrevious()
-        updatePlayerLayer()
     }
     
     @IBAction func userDidTapRightActiveSection(_ sender: Any) {
         player.goNext()
-        updatePlayerLayer()
     }
     
     
@@ -160,7 +158,6 @@ extension ShowViewController : L5PreloadingManagerDelegate {
             log.debug("Finished buffering minimum required assets!!!")
             self.hideLoadingScreen()
             self.player.play()
-            self.updatePlayerLayer()
         }
     }
     

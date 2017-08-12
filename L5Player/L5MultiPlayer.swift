@@ -12,16 +12,20 @@ import AVFoundation
 /// Context for recognizing context where the observer is been invoked from
 private var queuePlayerViewKVOContext = 0
 
-public protocol L5MultiPlayerProtocol : L5PlayerProtocol {
-    var currentPlayer: AVPlayer? { get }
+public protocol L5MultiPlayerDelegate: class {
+    func didChange(player: AVPlayer?)
+}
 
-    func append(asset: L5Asset)
+public protocol L5MultiPlayerProtocol : L5PlayerProtocol {
+    weak var delegate: L5MultiPlayerDelegate? { get set }
 }
 
 
 public class L5MultiPlayer: NSObject, L5MultiPlayerProtocol {
 
     // MARK: - STORED PROPERTIES
+
+    weak public var delegate: L5MultiPlayerDelegate?
 
     /// Backup array of the items enqueued to be played
     var enqueuedItems = [L5Asset]()
@@ -125,6 +129,7 @@ public class L5MultiPlayer: NSObject, L5MultiPlayerProtocol {
     }
 
     public func play() {
+        delegate?.didChange(player: currentPlayer)
         currentPlayer?.play()
     }
 
