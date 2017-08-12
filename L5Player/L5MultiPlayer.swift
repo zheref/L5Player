@@ -109,11 +109,12 @@ public class L5MultiPlayer: NSObject, L5MultiPlayerProtocol {
             log.error("Trying to go to previous player item when the cursor is on zero position")
         } else {
             pause()
+            let lastItem = currentItem
             currentIndex -= 1
-
             currentItem?.seek(to: kCMTimeZero)
             if status == .readyToPlay {
                 play()
+                lastItem?.seek(to: kCMTimeZero)
                 automaticallyReplay = true
             } else {
                 log.warning("Tried to play but not ready yet for index: \(currentIndex)")
