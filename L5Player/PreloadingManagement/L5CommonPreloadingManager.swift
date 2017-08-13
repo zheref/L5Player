@@ -92,6 +92,9 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
     
     /// Starts preloading videos by buffering and/or caching according to the configuration
     public func startPreloading() {
+        for asset in assets {
+            delegate?.player?.append(asset: asset)
+        }
         for i in 0...(self.simultaneousBufferAmount-1) {
             preload(index: i)
         }
@@ -117,15 +120,13 @@ public class L5CommonPreloadingManager : L5CommonPreloadingManagerProtocol {
                 return
             }
             
-            if let delegate = self.delegate {
-                delegate.player.append(asset: asset)
-            }
-            
             if let nextIndexToDownload = self.assets.index(where: { $0.bufferStatus == .notStarted }) {
                 self.preload(index: nextIndexToDownload)
             } else {
                 log.verbose("No index found to continue buffering")
             }
+
+            self.delegate?.didPreload(asset)
             
             let alreadyBufferedAssets = self.assets.filter { $0.bufferStatus == .buffered }
             

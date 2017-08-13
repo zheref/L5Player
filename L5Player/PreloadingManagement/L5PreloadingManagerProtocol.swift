@@ -41,5 +41,6 @@ public protocol L5PreloadingManagerDelegate {
     var player: L5PlayerProtocol! { get }
     
     func managerIsReadyForPlayback()
-    
+
+    func didPreload(_ asset: L5Asset)
 }

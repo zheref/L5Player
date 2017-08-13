@@ -14,6 +14,8 @@ private var queuePlayerViewKVOContext = 0
 
 public protocol L5MultiPlayerDelegate: class {
     func didChange(player: AVPlayer?)
+    func showLoadingScreen()
+    func hideLoadingScreen()
 }
 
 public protocol L5MultiPlayerProtocol : L5PlayerProtocol {
@@ -112,19 +114,20 @@ public class L5MultiPlayer: NSObject, L5MultiPlayerProtocol {
             let lastItem = currentItem
             currentIndex -= 1
             currentItem?.seek(to: kCMTimeZero)
-            if status == .readyToPlay {
-                play()
-                lastItem?.seek(to: kCMTimeZero)
-                automaticallyReplay = true
-            } else {
-                log.warning("Tried to play but not ready yet for index: \(currentIndex)")
-            }
+            play()
+            lastItem?.seek(to: kCMTimeZero)
+            automaticallyReplay = true
         }
     }
 
     public func play() {
         delegate?.didChange(player: currentPlayer)
-        currentPlayer?.play()
+        if let player = currentPlayer, player.status == .readyToPlay {
+            player.play()
+        } else {
+            delegate?.showLoadingScreen()
+            log.warning("Tried to play but not ready yet for index: \(currentIndex)")
+        }
     }
 
     public func pause() {

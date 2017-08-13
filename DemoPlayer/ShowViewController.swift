@@ -33,6 +33,8 @@ class ShowViewController: UIViewController, L5MultiPlayerDelegate {
     var bufferer: L5BufferPreloaderProtocol!
     
     var downloader: L5DownloadPreloaderProtocol?
+
+    var didStartPlayback = false
     
     // MARK: Computed Properties
     
@@ -123,7 +125,7 @@ class ShowViewController: UIViewController, L5MultiPlayerDelegate {
     }
     
     /// Change elements to display loading screen. Specially designed for giving time for loading assets
-    private func showLoadingScreen() {
+    internal func showLoadingScreen() {
         leftButton.isUserInteractionEnabled = false
         rightButton.isUserInteractionEnabled = false
         activityIndicator.isHidden = false
@@ -131,7 +133,7 @@ class ShowViewController: UIViewController, L5MultiPlayerDelegate {
     }
     
     /// Change elements to hide loading screen. Should be run when assets are ready to play smoothly
-    fileprivate func hideLoadingScreen() {
+    internal func hideLoadingScreen() {
         leftButton.isUserInteractionEnabled = true
         rightButton.isUserInteractionEnabled = true
         activityIndicator.isHidden = true
@@ -152,8 +154,18 @@ class ShowViewController: UIViewController, L5MultiPlayerDelegate {
 }
 
 extension ShowViewController : L5PreloadingManagerDelegate {
+    func didPreload(_ asset: L5Asset) {
+        if let currentAsset = self.manager?.currentAsset, currentAsset === asset, didStartPlayback {
+            DispatchQueue.main.async { [unowned self] in
+                self.hideLoadingScreen()
+                self.player.play()
+            }
+        }
+    }
+
     
     func managerIsReadyForPlayback() {
+        didStartPlayback = true
         DispatchQueue.main.async { [unowned self] in
             log.debug("Finished buffering minimum required assets!!!")
             self.hideLoadingScreen()
