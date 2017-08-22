@@ -159,6 +159,7 @@ extension ShowViewController : L5PreloadingManagerDelegate {
             DispatchQueue.main.async { [unowned self] in
                 self.hideLoadingScreen()
                 self.player.play()
+                self.player.automaticallyReplay = self.player.automaticallyReplay
             }
         }
     }
@@ -170,6 +171,7 @@ extension ShowViewController : L5PreloadingManagerDelegate {
             log.debug("Finished buffering minimum required assets!!!")
             self.hideLoadingScreen()
             self.player.play()
+            self.player.automaticallyReplay = self.player.automaticallyReplay
         }
     }
     
