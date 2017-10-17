@@ -39,9 +39,6 @@ public class L5Asset {
             if let item = _playerItem {
                 return item
             }
-            if let asset = media {
-                return AVPlayerItem(asset: asset)
-            }
             return nil
         }
         set {
