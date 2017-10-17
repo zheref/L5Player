@@ -83,7 +83,7 @@ public class L5MultiPlayer: NSObject, L5MultiPlayerProtocol {
 
 
     private func goToZero() {
-        currentItem?.seek(to: kCMTimeZero)
+        currentItem?.seek(to: CMTime(value: 2, timescale: 100))
     }
 
 
